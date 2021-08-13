@@ -4,7 +4,6 @@ const tailwindConfig = require("./tailwind.config.js")
 const { theme } = resolveConfig(tailwindConfig)
 
 module.exports = {
-  pathPrefix: "/gatsby_justinshearer_com",
   siteMetadata: {
     title: "Justin Shearer dot com",
     author: "Justin Shearer",
