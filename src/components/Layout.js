@@ -67,7 +67,7 @@ const Layout = ({ children, location }) => {
                   zIndex: -1
                 }}
               />
-               <motion.div variants={variants} className="h-0 absolute z-30 w-12 top-4 left-4 425px:left-8 768px:left-16 768px:top-11">
+               <motion.div variants={variants} className="h-0 absolute z-30 w-12 top-4 left-4 425px:left-8 375px:top-8 768px:left-16 768px:top-11">
                
                <TransitionLink to="/" enter={{ length: duration }} exit={{ length: duration }} className="opacity-75 hover:opacity-100 hover:cursor-pointer">
                  <img src={logo} alt="Justin Shearer" />
