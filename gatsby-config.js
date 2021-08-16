@@ -23,7 +23,22 @@ module.exports = {
       },
     },
     "gatsby-plugin-postcss",
-    "gatsby-plugin-transition-link"
+    "gatsby-plugin-transition-link",
+    {
+      resolve: `gatsby-plugin-google-gtag`,
+      options: {
+        trackingIds: [
+          "G-3K14SCY8N8",
+          ],
+       gtagConfig: {
+        },
+        pluginConfig: {
+          head: false,
+
+          exclude: [],
+        },
+      },
+    },
   ],
   
 }
