@@ -2,7 +2,10 @@ import React, { Fragment } from "react";
 import MenuItem from "./MenuItem"
 
 const Menu = ({menuOpen}) => {
-  var p = window.location.pathname;
+  var  p = "";
+  if (typeof window !== 'undefined') {
+    p = window.location.pathname;
+  } 
   var themeClasses = "";
 
   if(p === "/fire/"){
