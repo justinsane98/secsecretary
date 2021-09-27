@@ -17,12 +17,19 @@ const item = {
   },
 };
 
-const MenuItem = ({to, className, children}) => (
+const MenuItem = ({to, className, children}) => {
+
+  var  path = "";
+  if (typeof window !== 'undefined') {
+    path = window.location.pathname;
+  } 
+
+return (
   <Fragment>
     <AnimatePresence>
         <li 
           style={{ textShadow: "2px 2px 0 rgba(0,0,0,0.2)" }}
-          className={"menu-item text-white-90 text-lg 425px:text-xl font-serif leading-tight sm:leading-loose z-10 mb-4 hover:text-white hover:pl-1 " + (window.location.pathname == to ? "font-bold" : "font-normal") + " " + className }
+          className={"menu-item text-white-90 text-lg 425px:text-xl font-serif leading-tight sm:leading-loose z-10 mb-4 hover:text-white hover:pl-1 " + (path == to ? "font-bold" : "font-normal") + " " + className }
         >
           <TransitionLink to={to} enter={{ length: duration }} exit={{ length: duration }} className="">
             {children}
@@ -30,6 +37,6 @@ const MenuItem = ({to, className, children}) => (
         </li>
       </AnimatePresence>
   </Fragment>
-);
+)};
 
 export default MenuItem;
