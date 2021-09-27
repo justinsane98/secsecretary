@@ -37,7 +37,7 @@ const variants = {
 }
 
 const Layout = ({ children, location }) => {
-  const [menuOpen, setMenuOpen] = useState(false)
+  const [menuOpen, setMenuOpen, theme] = useState(false)
   
   return(
     <>
@@ -50,7 +50,7 @@ const Layout = ({ children, location }) => {
           exit="exit"
         >
           <div className="flex min-h-screen">
-            <div className="px-4 425px:px-8 w-full 768px:px-16 relative">
+            <div className="w-full relative">
 
               <SEO />
               <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -78,13 +78,13 @@ const Layout = ({ children, location }) => {
                     
                     onClick={() => setMenuOpen(!menuOpen) }
                   >
-                  <Hamburger menuopen={menuOpen ? 1 : 0} setMenuOpen={setMenuOpen}/>
+                  <Hamburger menuopen={menuOpen ? 1 : 0} setMenuOpen={setMenuOpen} />
                 </button>
               </motion.div>
 
               <Menu menuOpen={menuOpen ? 1 : 0} setMenuOpen={setMenuOpen}/>            
             
-              <div className="min-h-screen flex-1 flex flex-col justify-center max-w-7xl">
+              <div className="min-h-screen flex-1 flex flex-col justify-center">
                 {children}
               </div>
                 

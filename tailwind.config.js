@@ -30,7 +30,7 @@ module.exports = {
         light: "#fff",
         DEFAULT: "#fff",
         dark: "#fff",
-        90 : "rgba(0, 255, 255, 0.90)",
+        90 : "rgba(255, 255, 255, 0.90)",
         75 : "rgba(255, 255, 255, 0.75)",
         50: "rgba(255, 255, 255, 0.5)",
         25: "rgba(255, 255, 255, 0.2)",
@@ -40,6 +40,54 @@ module.exports = {
         light: '#E5E7EB',
         DEFAULT: '#9CA3AF',
         dark: '#4B5563',
+      },
+      black: {
+        light: '#111',
+        DEFAULT: "#000",
+        dark: '#000000',
+        90 : "rgba(0, 0, 0, 0.90)",
+        75 : "rgba(0, 0, 0, 0.75)",
+        50: "rgba(0, 0, 0, 0.5)",
+        25: "rgba(0, 0, 0, 0.2)",
+        10: "rgba(0, 0, 0, 0.1)"
+      },
+      yellow: {
+        light: '#EEE419',
+        DEFAULT: "#ECE100",
+        dark: '#D5CB00',
+      },
+      gold: {
+        light:'#FFD977',
+        DEFAULT: '#FFCC4A',
+        dark: '#BF9937'
+      },
+      navy: {
+        lighter: "#9AA6B4",
+        light: '#50687E',
+        DEFAULT: "#163454",
+        dark: '#14324D',
+        darker: '#10283F'
+      },
+      brown: "#4A491C",
+      red: {
+        light: '#D5423F',
+        DEFAULT: "#D02D2A",
+        dark: '#BC2926',
+        90 : "rgba(208, 45, 42, 0.90)",
+        75 : "rgba(208, 45, 42, 0.75)",
+        50: "rgba(208, 45, 42, 0.5)",
+        25: "rgba(208, 45, 42, 0.2)",
+        10: "rgba(208, 45, 42, 0.1)"
+      },
+      indigo: {
+        light: '#809ae5',
+        DEFAULT: '#5472CC',
+        dark: '#4C6DC4',
+        90 : "rgba(84, 114, 204, 0.90)",
+        75 : "rgba(84, 114, 204, 0.75)",
+        50: "rgba(84, 114, 204, 0.5)",
+        25: "rgba(84, 114, 204, 0.2)",
+        10: "rgba(84, 114, 204, 0.1)"
       }
     },
     fontFamily: {
