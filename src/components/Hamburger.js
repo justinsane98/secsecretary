@@ -1,7 +1,10 @@
 import React from "react";
 
 const Hamburger = ({menuopen}) => {
-var p = window.location.pathname;
+  var  p = "";
+  if (typeof window !== 'undefined') {
+    p = window.location.pathname;
+  }  
 var themeClasses = "";
 
 if(p === "/fire/"){
