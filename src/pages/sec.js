@@ -1,4 +1,6 @@
 import React from "react"
+import fetch from 'node-fetch'
+
 const months = ["January", "February", "March", "April", "May", "June",
   "July", "August", "September", "October", "November", "December"
 ];
