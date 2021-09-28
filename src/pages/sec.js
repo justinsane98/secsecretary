@@ -5,6 +5,12 @@ const months = ["January", "February", "March", "April", "May", "June",
 var today = new Date();
 var todaysDate = months[today.getMonth()] + " " + today.getDay() + ", " + today.getFullYear();
 
+const RSSURL = `https://www.sec.gov/rss/litigation/litreleases.xml`;
+fetch(RSSURL)
+  .then(response => response.text())
+  .then(str => new window.DOMParser().parseFromString(str, "text/xml"))
+  .then(data => console.log(data))
+
 const Sec = () => (
   <>
     <div className="mx-auto w-3/4 font-serif">
@@ -17,11 +23,17 @@ const Sec = () => (
       <li><a className="text-blue" href="https://www.sec.gov/news/whatsnew/wn-archive.shtml">Previous What’s New Issues</a></li>
       <li><a className="text-blue" href="https://www.sec.gov/news/digest.shtml">News Digest Archives (1956-2013)</a></li>
     </ul>
+    
     <h2 className="text-lg border-b-2">FOIA Program</h2>
+
     <h2 className="text-lg border-b-2">ALJ Initial Decisions</h2>
     <h2 className="text-lg border-b-2">ALJ Initial Orders</h2>
     <h2 className="text-lg border-b-2">Divisions</h2>
     <h2 className="text-lg border-b-2">Litigation</h2>
+    <a href="https://www.sec.gov/rss/litigation/litreleases.xml">Source</a>
+
+
+
     <h2 className="text-lg border-b-2">News and Public Statements</h2>
     <h2 className="text-lg border-b-2">News</h2>
     <h2 className="text-lg border-b-2">Regulatory Actions</h2>
