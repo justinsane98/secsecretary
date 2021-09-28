@@ -1,6 +1,5 @@
 import React from "react"
 import Layout from "../components/Layout"
-import InlineLink from "../components/InlineLink";
 import Highlight from "../components/Highlight";
 import Heading from "../components/Heading";
 import { motion, AnimatePresence } from 'framer-motion'

@@ -37,7 +37,7 @@ const variants = {
 }
 
 const Layout = ({ children, location }) => {
-  const [menuOpen, setMenuOpen, theme] = useState(false)
+  const [menuOpen, setMenuOpen] = useState(false)
   
   return(
     <>

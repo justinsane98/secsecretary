@@ -1,7 +1,6 @@
 import React from "react"
 import Layout from "../components/Layout"
 import data from '../data/data'
-import Lyric from "../components/Lyric"
 import Heading from "../components/Heading"
 import { motion, AnimatePresence } from 'framer-motion'
 import bg from "/public/images/contact5px.gif"
