@@ -20,7 +20,13 @@ let parser = new Parser({
 const [feed, setFeed] = useState(0)
 
 useEffect(() => {
-  fetch(rssUrl)
+  fetch(rssUrl, {
+    method: 'GET',
+    mode: 'cors',
+    headers: {
+      'Access-Control-Allow-Origin': '*'
+    }
+  })
   .then(response => response.text())
   .then(str => new window.DOMParser().parseFromString(str, "text/xml"))
   .then(data => console.log(data))
