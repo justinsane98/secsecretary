@@ -8,9 +8,10 @@ const Feed = ({rssUrl, sourceUrl, title}) => {
 var today = new Date();
 var todaysDay = today.getDate();
 var todaysMonth = today.getMonth();
+var todaysYear = today.getFullYear();
 var searchDay = todaysDay;
 var searchMonth = months[todaysMonth].substring(0,3);
-
+var searchYear = todaysYear;
 let parser = new Parser();
 
 const [feed, setFeed] = useState(0)
@@ -22,6 +23,7 @@ useEffect(() => {
     rss.items.forEach(function(entry, i) {
       var entryDay = entry.pubDate.split(" ")[1]
       var entryMonth = entry.pubDate.split(" ")[2]
+      var entryYear = entry.pubDate.split(" ")[3]
       var entryTime = entry.pubDate.split(" ")[4]
       var entryMinute = entryTime.split(":")[1]
       var entryHour = entryTime.split(":")[0]
@@ -33,16 +35,17 @@ useEffect(() => {
         suffix = "AM"
       }
       var entryTimeString = entryHour + ":" + entryMinute + suffix +" EST"
-
-    //if((entryDay == searchDay) && entryMonth === searchMonth){
-        subset.push (
-          <li className="768px:flex-col 768px:w-1/2 768px:px-8 py-4" key={entry.title + i}>
-            <a className="text-large text-navy font-bold hover:underline" href={entry.link}>{entry.title}</a>
-            <p className="opacity-90">{entry.content.replaceAll("<br />", " ")}</p>
-            <p className="text-sm opacity-25">{entryTimeString}</p>
-          </li>
-        );
-    //}
+      var content = entry.content ? entry.content.replaceAll("<br />", " ") : "";
+      console.log(entryYear+ "===" +searchYear)
+      if((entryDay == searchDay) && entryMonth === searchMonth && entryYear == searchYear){
+          subset.push (
+            <li className="768px:flex-col 768px:w-1/2 768px:px-8 py-4" key={entry.title + i}>
+              <a className="text-large text-navy font-bold hover:underline" href={entry.link}>{entry.title}</a>
+              <p className="opacity-90">{content}</p>
+              <p className="text-sm opacity-25">{entryTimeString}</p>
+            </li>
+          );
+      }
     })
     setFeed(subset)
   })

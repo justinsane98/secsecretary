@@ -39,23 +39,32 @@ return (
         <li><a className="text-navy font-bold hover:underline" href="https://www.sec.gov/news/digest.shtml">News Digest Archives (1956-2013)</a></li>
       </ul>
       
-      {/*
+   
       <Feed title="Press Releases" rssUrl="https://www.sec.gov/rss/news/press.xml" sourceUrl="https://www.sec.gov/news/pressreleases" />
       <Feed title="Litigation" rssUrl="https://www.sec.gov/rss/litigation/litreleases.xml" sourceUrl="https://www.sec.gov/litigation/litreleases.htm" />
       <Feed title="Speeches" rssUrl="https://www.sec.gov/rss/news/speech.xml" sourceUrl="https://www.sec.gov/news/speeches" />
       <Feed title="Testimony" rssUrl="https://www.sec.gov/news/testimony.rss" sourceUrl="https://www.sec.gov/news/testimony" />
-      */}
-
-      <Feed title="Testimony" rssUrl="https://www.sec.gov/news/testimony.rss" sourceUrl="https://www.sec.gov/news/testimony" />
+      <Feed title="Statements" rssUrl="https://www.sec.gov/news/statements.rss" sourceUrl="https://www.sec.gov/news/statements" />
+      <Feed title="Administrative Proceedings" rssUrl="https://www.sec.gov/rss/litigation/admin.xml" sourceUrl="https://www.sec.gov/litigation/admin.htm" />
+      <Feed title="Trading Suspensions" rssUrl="https://www.sec.gov/rss/litigation/suspensions.xml" sourceUrl="https://www.sec.gov/litigation/suspensions.htm" />
+      <Feed title="Proposed Rules" rssUrl="https://www.sec.gov/rss/rules/proposed.xml" sourceUrl="https://www.sec.gov/rules/proposed.shtml" />
+      <Feed title="Division of Corporation Finance" rssUrl="https://www.sec.gov/rss/divisions/corpfin/cfnew.xml" sourceUrl="https://www.sec.gov/divisions/corpfin/cfnew.shtml" />
+      <Feed title="Division of Investment Management News" rssUrl="https://www.sec.gov/rss/divisions/investment/imnews.xml" sourceUrl="https://www.sec.gov/investment-management/whats-new" />
+      <Feed title="Investor Alerts and Bulletins" rssUrl="https://www.sec.gov/rss/investor/alerts" sourceUrl="https://www.sec.gov/investor/alerts" />
+{/* 
 
       <div className="opacity-50 mt-12">
+      <h2>Other Commission Orders, Notices, and Information</h2>
+      No Feed... request page and scrape data:
+      grab the table#mainlist and iterate manually
+      https://www.sec.gov/rules/other.htm
+      
       <h2 className="text-lg border-b-2">FOIA Program</h2>
       <h2 className="text-lg border-b-2">ALJ Initial Decisions</h2>
       <h2 className="text-lg border-b-2">ALJ Initial Orders</h2>
       <h2 className="text-lg border-b-2">Divisions</h2>
-      <h2 className="text-lg border-b-2">News and Public Statements</h2>
       <h2 className="text-lg border-b-2">Regulatory Actions</h2>
-      </div>
+      </div> */}
       </main>
       </div>
     </>
