@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react"
 import Parser from 'rss-parser'
+import fetch from 'node-fetch'
 
 const Feed = ({rssUrl, sourceUrl, title}) => {
   const months = ["January", "February", "March", "April", "May", "June",
@@ -12,43 +13,49 @@ var todaysYear = today.getFullYear();
 var searchDay = todaysDay;
 var searchMonth = months[todaysMonth].substring(0,3);
 var searchYear = todaysYear;
-let parser = new Parser();
+let parser = new Parser({
+  headers: {'Access-Control-Allow-Origin': '*'}
+});
 
 const [feed, setFeed] = useState(0)
 
 useEffect(() => {
- 
-  parser.parseURL(rssUrl, function(err, rss) {
-    var subset = [];
-    rss.items.forEach(function(entry, i) {
-      var entryDay = entry.pubDate.split(" ")[1]
-      var entryMonth = entry.pubDate.split(" ")[2]
-      var entryYear = entry.pubDate.split(" ")[3]
-      var entryTime = entry.pubDate.split(" ")[4]
-      var entryMinute = entryTime.split(":")[1]
-      var entryHour = entryTime.split(":")[0]
-      var suffix = "";
-      if(entryHour >= 12) {
-        suffix = "PM"
-        entryHour = ((entryHour + 11) % 12 + 1)
-      } else {
-        suffix = "AM"
-      }
-      var entryTimeString = entryHour + ":" + entryMinute + suffix +" EST"
-      var content = entry.content ? entry.content.replaceAll("<br />", " ") : "";
-      console.log(entryYear+ "===" +searchYear)
-      if((entryDay == searchDay) && entryMonth === searchMonth && entryYear == searchYear){
-          subset.push (
-            <li className="768px:flex-col 768px:w-1/2 768px:px-8 py-4" key={entry.title + i}>
-              <a className="text-large text-navy font-bold hover:underline" href={entry.link}>{entry.title}</a>
-              <p className="opacity-90">{content}</p>
-              <p className="text-sm opacity-25">{entryTimeString}</p>
-            </li>
-          );
-      }
-    })
-    setFeed(subset)
-  })
+  fetch(rssUrl)
+  .then(response => response.text())
+  .then(str => new window.DOMParser().parseFromString(str, "text/xml"))
+  .then(data => console.log(data))
+
+  // parser.parseURL(rssUrl, function(err, rss) {
+  //   var subset = [];
+  //   rss.items.forEach(function(entry, i) {
+  //     var entryDay = entry.pubDate.split(" ")[1]
+  //     var entryMonth = entry.pubDate.split(" ")[2]
+  //     var entryYear = entry.pubDate.split(" ")[3]
+  //     var entryTime = entry.pubDate.split(" ")[4]
+  //     var entryMinute = entryTime.split(":")[1]
+  //     var entryHour = entryTime.split(":")[0]
+  //     var suffix = "";
+  //     if(entryHour >= 12) {
+  //       suffix = "PM"
+  //       entryHour = ((entryHour + 11) % 12 + 1)
+  //     } else {
+  //       suffix = "AM"
+  //     }
+  //     var entryTimeString = entryHour + ":" + entryMinute + suffix +" EST"
+  //     var content = entry.content ? entry.content.replaceAll("<br />", " ") : "";
+  //     console.log(entryYear+ "===" +searchYear)
+  //     if((entryDay == searchDay) && entryMonth === searchMonth && entryYear == searchYear){
+  //         subset.push (
+  //           <li className="768px:flex-col 768px:w-1/2 768px:px-8 py-4" key={entry.title + i}>
+  //             <a className="text-large text-navy font-bold hover:underline" href={entry.link}>{entry.title}</a>
+  //             <p className="opacity-90">{content}</p>
+  //             <p className="text-sm opacity-25">{entryTimeString}</p>
+  //           </li>
+  //         );
+  //     }
+  //   })
+  //   setFeed(subset)
+  // })
 }, [])
 
 return (
