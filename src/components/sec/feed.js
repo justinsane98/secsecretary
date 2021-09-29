@@ -20,13 +20,22 @@ let parser = new Parser({
 const [feed, setFeed] = useState(0)
 
 useEffect(() => {
-  fetch(rssUrl, {
-    method: 'GET',
-    mode: 'cors'
-  })
-  .then(response => response.text())
-  .then(str => new window.DOMParser().parseFromString(str, "text/xml"))
-  .then(data => console.log(data))
+  fetch(rssUrl)
+    .then(response => response.text())
+    .then(str => new window.DOMParser().parseFromString(str, "text/xml"))
+    .then(data => {
+      console.log(data);
+      const items = data.querySelectorAll("item");
+      let html = ``;
+      items.forEach(el => {
+        html += `
+
+                ${el.querySelector("title").innerHTML}
+
+        `;
+      });
+      document.body.insertAdjacentHTML("beforeend", html);
+    });
 
   // parser.parseURL(rssUrl, function(err, rss) {
   //   var subset = [];
