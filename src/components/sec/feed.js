@@ -22,10 +22,7 @@ const [feed, setFeed] = useState(0)
 useEffect(() => {
   fetch(rssUrl, {
     method: 'GET',
-    mode: 'cors',
-    headers: {
-      'Access-Control-Allow-Origin': '*'
-    }
+    mode: 'cors'
   })
   .then(response => response.text())
   .then(str => new window.DOMParser().parseFromString(str, "text/xml"))
