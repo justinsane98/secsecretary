@@ -1,7 +1,7 @@
 import React from "react"
-import NewsList from "../components/sec/news"
+import SpeechesList from "../components/sec/speeches"
 
-const News = () => {
+const Speeches = () => {
   const months = ["January", "February", "March", "April", "May", "June",
   "July", "August", "September", "October", "November", "December"
 ];
@@ -38,10 +38,10 @@ return (
     <div className="my-12 mx-auto max-w-2xl w-3/4 font-serif">
       <main>
         <section className="mb-12 relative">
-          <h2 className="text-2xl border-b border-black-25 pb-2">News</h2>
-          <NewsList startDate={start} endDate={end} />
+          <h2 className="text-2xl border-b border-black-25 pb-2">Speeches</h2>
+          <SpeechesList startDate={start} endDate={end} />
           <div className="425px:absolute top-2 right-0">
-            <a className="text-gold leading-loose hover:underline" href="https://www.sec.gov/rss/news/press.xml">XML</a> | <a className="inline-block text-navy hover:underline" href="https://www.sec.gov/news/pressreleases">Source</a>
+            <a className="text-gold leading-loose hover:underline" href="https://www.sec.gov/news/speeches.rss">XML</a> | <a className="inline-block text-navy hover:underline" href="https://www.sec.gov/news/speeches">Source</a>
           </div>    
         </section>
       </main>
@@ -49,4 +49,4 @@ return (
     </>
   )
 }
-export default News
+export default Speeches

@@ -1,6 +1,6 @@
 import React from "react"
 import Litigation from "../components/sec/litigation"
-import NewsList from "../components/sec/news"
+import News from "../components/sec/news"
 import Speeches from "../components/sec/speeches"
 import Testimony from "../components/sec/testimony"
 import Statements from "../components/sec/statements"
@@ -30,7 +30,7 @@ return (
     />
 
     <header className="bg-navy text-white-50 font-serif text-center text-sm uppercase py-1 px-12">
-      Office of the Secretary of the Secretary
+      Secretary of the Secretary
     </header>
     <div className="my-12 mx-auto max-w-2xl w-3/4 font-serif">
     <main>
@@ -46,16 +46,23 @@ return (
         <li><a className="text-navy font-bold hover:underline" href="https://www.sec.gov/news/digest.shtml">News Digest Archives (1956-2013)</a></li>
       </ul>
 
-
       <section className="mb-12 relative">
         <h2 className="text-2xl border-b border-black-25 pb-2">News</h2>
-        <NewsList startDate={start} endDate={end} /> 
+        <News startDate={start} endDate={end} /> 
         <div className="425px:absolute top-2 right-0 text-navy">
           <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 inline-block relative -top-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg> <a className="inline-block hover:underline" href="/news">More</a>
         </div>     
       </section>
 
-      <Speeches startDate={start} endDate={end} title="Speeches" rssUrl="https://www.sec.gov/rss/news/speech.xml" sourceUrl="https://www.sec.gov/news/speeches" />
+      <section className="mb-12 relative">
+        <h2 className="text-2xl border-b border-black-25 pb-2">Speeches</h2>
+        <Speeches startDate={start} endDate={end} title="Speeches" />
+        <div className="425px:absolute top-2 right-0 text-navy">
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 inline-block relative -top-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg> <a className="inline-block hover:underline" href="/speeches">More</a>
+        </div>     
+      </section>
+
+
       <Testimony startDate={start} endDate={end} title="Testimony" rssUrl="https://www.sec.gov/news/testimony.rss" sourceUrl="https://www.sec.gov/news/testimony" />
       <Statements startDate={start} endDate={end} title="Statements" rssUrl="https://www.sec.gov/news/statements.rss" sourceUrl="https://www.sec.gov/news/statements" />
       <Litigation startDate={start} endDate={end} title="Litigation" rssUrl="https://www.sec.gov/rss/news/press.xml" sourceUrl="https://www.sec.gov/news/pressreleases" />
