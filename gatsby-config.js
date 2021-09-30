@@ -20,8 +20,71 @@ module.exports = {
     {
       resolve: `gatsby-source-rss-feed`,
       options: {
+        url: `https://www.sec.gov/rss/news/speech.xml`,
+        name: `Speeches`,
+      }
+    },
+    {
+      resolve: `gatsby-source-rss-feed`,
+      options: {
+        url: `https://www.sec.gov/news/testimony.rss`,
+        name: `Testimony`,
+      }
+    },
+    {
+      resolve: `gatsby-source-rss-feed`,
+      options: {
+        url: `https://www.sec.gov/news/statements.rss`,
+        name: `Statements`,
+      }
+    },
+    {
+      resolve: `gatsby-source-rss-feed`,
+      options: {
         url: `https://www.sec.gov/rss/litigation/litreleases.xml`,
         name: `Litigation`,
+      }
+    },
+    {
+      resolve: `gatsby-source-rss-feed`,
+      options: {
+        url: `https://www.sec.gov/rss/litigation/admin.xml`,
+        name: `Admin`,
+      }
+    },
+    {
+      resolve: `gatsby-source-rss-feed`,
+      options: {
+        url: `https://www.sec.gov/rss/litigation/suspensions.xml`,
+        name: `TradingSuspensions`,
+      }
+    },
+    {
+      resolve: `gatsby-source-rss-feed`,
+      options: {
+        url: `https://www.sec.gov/rss/rules/proposed.xml`,
+        name: `ProposedRules`,
+      }
+    },
+    {
+      resolve: `gatsby-source-rss-feed`,
+      options: {
+        url: `https://www.sec.gov/rss/divisions/corpfin/cfnew.xml`,
+        name: `CorporateFinance`,
+      }
+    },
+    {
+      resolve: `gatsby-source-rss-feed`,
+      options: {
+        url: `https://www.sec.gov/rss/divisions/investment/imnews.xml`,
+        name: `InvestmentManagement`,
+      }
+    },
+    {
+      resolve: `gatsby-source-rss-feed`,
+      options: {
+        url: `https://www.sec.gov/rss/investor/alertsandbulletins.xml`,
+        name: `InvestorAlerts`,
       }
     },
     "gatsby-plugin-react-helmet",

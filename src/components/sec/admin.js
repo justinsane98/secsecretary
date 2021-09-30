@@ -1,20 +1,18 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 
-const Testimony = ({rssUrl, sourceUrl, title, startDate, endDate}) => {
+const Admin = ({rssUrl, sourceUrl, title, startDate, endDate}) => {
 
   const data = useStaticQuery(graphql`
   {
-    allFeedTestimony {
+    allFeedAdmin {
       nodes {
         content
-        guid
-        pubDate
         title
+        pubDate
         link
       }
     }
-  
   }
 `)
 
@@ -23,7 +21,7 @@ const Testimony = ({rssUrl, sourceUrl, title, startDate, endDate}) => {
   ];
 
   let feed = [];
-  let nodes = data.allFeedTestimony.nodes;
+  let nodes = data.allFeedAdmin.nodes;
 
   nodes.forEach(function(entry, i) {
     let entryDay = entry.pubDate.split(" ")[1]
@@ -60,4 +58,4 @@ const Testimony = ({rssUrl, sourceUrl, title, startDate, endDate}) => {
       </>
     )
 }
-export default Testimony
+export default Admin
