@@ -7,6 +7,7 @@ import Statements from "../components/sec/Statements"
 import Admin from "../components/sec/Admin"
 import TradingSuspensions from "../components/sec/TradingSuspensions"
 import Footer from "../components/sec/Footer"
+import ProposedRules from "../components/sec/ProposedRules"
 
 const Yesterday = () => {
   const months = ["January", "February", "March", "April", "May", "June",
