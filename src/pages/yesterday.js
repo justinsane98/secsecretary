@@ -38,7 +38,7 @@ return (
     </header>
     <div className="my-12 mx-auto max-w-2xl w-3/4 font-serif">
     <main>
-      <h1 className="text-3xl text-navy text-center">What’s New on the SEC Website</h1>
+      <h1 className="text-3xl text-navy text-center">Yesterday at the SEC</h1>
       <h2 className="mb-8 text-lg text-center"> 
         {startDate === endDate ? startDate : (startDate + " - " + endDate)}
         <a className="text-navy-50 inline-block relative top-1 left-2" href="/sec">

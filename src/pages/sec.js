@@ -7,6 +7,7 @@ import Statements from "../components/sec/Statements"
 import Admin from "../components/sec/Admin"
 import TradingSuspensions from "../components/sec/TradingSuspensions"
 import Footer from "../components/sec/Footer"
+import ProposedRules from "../components/sec/ProposedRules"
 
 const Sec = () => {
   const months = ["January", "February", "March", "April", "May", "June",
@@ -38,7 +39,7 @@ return (
     </header>
     <div className="my-12 mx-auto max-w-2xl w-3/4 font-serif">
     <main>
-      <h1 className="text-3xl text-navy text-center">What’s New on the SEC Website</h1>
+      <h1 className="text-3xl text-navy text-center">Today at the SEC</h1>
       <h2 className="mb-4 text-lg text-center">
          <a className="text-navy-50 inline-block relative top-1 -left-2" href="/yesterday">
           <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -48,7 +49,7 @@ return (
         {startDate === endDate ? startDate : (startDate + " - " + endDate)}
       </h2>
       
-      <blockquote className="mb-8 text-sm px-6 py-4 border border-navy-light">The official What’s New page for the SEC will no longer be updated after September 30, 2021. To stay current on the most recent materials posted to the SEC website, the SEC suggests subscribing to the <a className="text-navy font-bold hover:underline" href="https://www.sec.gov/about/secrss.shtml">SEC RSS feeds</a>. <span className="font-bold">Or you can let the Secretary take of that for you.</span></blockquote>
+      <blockquote className="mb-8 text-sm px-6 py-4 border border-navy-light">The official What’s New page for the SEC is no longer updated as of September 30, 2021. To stay current on the most recent materials posted to the SEC website, the SEC suggests subscribing to the <a className="text-navy font-bold hover:underline" href="https://www.sec.gov/about/secrss.shtml">SEC RSS feeds</a>. <span className="font-bold">Or you can let the Secretary take of that for you.</span></blockquote>
 
       <section className="mb-12 relative">
         <h2 className="text-2xl border-b border-black-25 pb-2">News</h2>
@@ -103,6 +104,14 @@ return (
         <TradingSuspensions startDate={start} endDate={end} />
         <div className="425px:absolute top-2 right-0 text-navy">
           <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 inline-block relative -top-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg> <a className="inline-block hover:underline" href="/tradingSuspensions">Past Suspensions</a>
+        </div>     
+      </section>
+
+      <section className="mb-12 relative">
+        <h2 className="text-2xl border-b border-black-25 pb-2">Proposed Rules</h2>
+        <ProposedRules startDate={start} endDate={end} />
+        <div className="425px:absolute top-2 right-0 text-navy">
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 inline-block relative -top-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg> <a className="inline-block hover:underline" href="/proposedRules">Past Proposals</a>
         </div>     
       </section>
       
