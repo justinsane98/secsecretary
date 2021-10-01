@@ -1,18 +1,13 @@
 import React from "react"
-import NewsList from "../components/sec/news"
+import NewsList from "../components/sec/News"
+import Footer from "../components/sec/Footer"
 
 const News = () => {
-  const months = ["January", "February", "March", "April", "May", "June",
-  "July", "August", "September", "October", "November", "December"
-];
-
 var today = new Date();
 var start = new Date(today);
 start.setDate(start.getDate()-99999);
-var startDate = months[start.getMonth()] + " " + (start.getDate()) + ", " + start.getFullYear();
 var end = new Date(today);
 end.setDate(end.getDate());
-var endDate = months[end.getMonth()] + " " + end.getDate() + ", " + end.getFullYear();
 
 return (
   <>
@@ -45,6 +40,7 @@ return (
           </div>    
         </section>
       </main>
+      <Footer />
     </div>
     </>
   )

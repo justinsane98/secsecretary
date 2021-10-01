@@ -1,8 +1,8 @@
 import React from "react"
-import SpeechesList from "../components/sec/Speeches"
+import TestimonyList from "../components/sec/Testimony"
 import Footer from "../components/sec/Footer"
 
-const Speeches = () => {
+const Testimony = () => {
 var today = new Date();
 var start = new Date(today);
 start.setDate(start.getDate()-99999);
@@ -33,16 +33,16 @@ return (
     <div className="my-12 mx-auto max-w-2xl w-3/4 font-serif">
       <main>
         <section className="mb-12 relative">
-          <h2 className="text-2xl border-b border-black-25 pb-2">Speeches</h2>
-          <SpeechesList startDate={start} endDate={end} />
+          <h2 className="text-2xl border-b border-black-25 pb-2">Testimony</h2>
+          <TestimonyList startDate={start} endDate={end} />
           <div className="425px:absolute top-2 right-0">
-            <a className="text-gold leading-loose hover:underline" href="https://www.sec.gov/news/speeches.rss">XML</a> | <a className="inline-block text-navy hover:underline" href="https://www.sec.gov/news/speeches">Source</a>
+            <a className="text-gold leading-loose hover:underline" href="https://www.sec.gov/news/testimony.rss">XML</a> | <a className="inline-block text-navy hover:underline" href="https://www.sec.gov/news/testimony">Source</a>
           </div>    
         </section>
       </main>
-      <Footer />
+      <Footer/>
     </div>
     </>
   )
 }
-export default Speeches
+export default Testimony

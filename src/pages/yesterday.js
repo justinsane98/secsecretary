@@ -8,11 +8,11 @@ import Admin from "../components/sec/Admin"
 import TradingSuspensions from "../components/sec/TradingSuspensions"
 import Footer from "../components/sec/Footer"
 
-const Sec = () => {
+const Yesterday = () => {
   const months = ["January", "February", "March", "April", "May", "June",
   "July", "August", "September", "October", "November", "December"
 ];
-var MOD = 0;
+var MOD = 1;
 var today = new Date();
 var start = new Date(today);
 start.setDate(start.getDate() - MOD);
@@ -31,7 +31,7 @@ return (
     />
 
     <header className="bg-navy text-center px-12 relative">
-      <div className="absolute top-2 left-12 bg-white-10 h-0.5 right-12 w-100 z-0"></div>
+    <div className="absolute top-2 left-12 bg-white-10 h-0.5 right-12 w-100 z-0"></div>
       <div className="absolute top-3 left-10 bg-white-10 h-0.5 right-10 w-100 z-0"></div>
       <div className="absolute top-4 left-12 bg-white-10 h-0.5 right-12 w-100 z-0"></div>
       <span className="relative inline-block bg-navy py-1 px-2 text-sm uppercase text-white-50 font-serif z-1">Secretary of the Secretary</span>
@@ -39,17 +39,14 @@ return (
     <div className="my-12 mx-auto max-w-2xl w-3/4 font-serif">
     <main>
       <h1 className="text-3xl text-navy text-center">What’s New on the SEC Website</h1>
-      <h2 className="mb-4 text-lg text-center">
-         <a className="text-navy-50 inline-block relative top-1 -left-2" href="/yesterday">
+      <h2 className="mb-8 text-lg text-center"> 
+        {startDate === endDate ? startDate : (startDate + " - " + endDate)}
+        <a className="text-navy-50 inline-block relative top-1 left-2" href="/sec">
           <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
           </svg>
         </a>
-        {startDate === endDate ? startDate : (startDate + " - " + endDate)}
       </h2>
-      
-      <blockquote className="mb-8 text-sm px-6 py-4 border border-navy-light">The official What’s New page for the SEC will no longer be updated after September 30, 2021. To stay current on the most recent materials posted to the SEC website, the SEC suggests subscribing to the <a className="text-navy font-bold hover:underline" href="https://www.sec.gov/about/secrss.shtml">SEC RSS feeds</a>. <span className="font-bold">Or you can let the Secretary take of that for you.</span></blockquote>
-
       <section className="mb-12 relative">
         <h2 className="text-2xl border-b border-black-25 pb-2">News</h2>
         <News startDate={start} endDate={end} /> 
@@ -127,4 +124,4 @@ return (
     </>
   )
 }
-export default Sec
+export default Yesterday

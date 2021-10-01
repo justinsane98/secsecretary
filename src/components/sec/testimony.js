@@ -1,7 +1,7 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 
-const Testimony = ({rssUrl, sourceUrl, title, startDate, endDate}) => {
+const Testimony = ({startDate, endDate}) => {
 
   const data = useStaticQuery(graphql`
   {
@@ -48,16 +48,13 @@ const Testimony = ({rssUrl, sourceUrl, title, startDate, endDate}) => {
   
   return (
     <>
-        <section className={"mb-12 " + (feed.length > 0 ? "block" : "hidden" )}>
-          <div className="768px:float-right">
-            <a className="text-gold leading-loose" href={rssUrl}>XML</a> | <a className="inline-block text-navy" href={sourceUrl}> <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 inline-block relative -top-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg> More</a>
-          </div>
-          <h2 className="text-2xl border-b border-black-25 pb-2">{title}</h2>
-          <ul className="768px:flex 768px:flex-wrap 768px:-mx-8">
-            {feed}
-          </ul>
-        </section>
-      </>
-    )
+      <ul className={(feed.length > 0 ? "" : "hidden") +" 768px:flex 768px:flex-wrap 768px:-mx-8"}>
+        {feed}
+      </ul>
+      <p className={(feed.length > 0 ? "hidden" : "") + " py-4 opacity-50"}>
+        No testimony has been published today.
+      </p>
+    </>
+  )
 }
 export default Testimony

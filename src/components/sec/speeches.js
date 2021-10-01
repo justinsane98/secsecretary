@@ -48,15 +48,12 @@ const Speeches = ({startDate, endDate}) => {
 
 return (
   <>
-
     <ul className={(feed.length > 0 ? "" : "hidden") +" 768px:flex 768px:flex-wrap 768px:-mx-8"}>
       {feed}
     </ul>
     <p className={(feed.length > 0 ? "hidden" : "") + " py-4 opacity-50"}>
-      No speeches have been published today.
+      No speech has been published today.
     </p>
-
-    
     </>
   )
 }
