@@ -1,7 +1,7 @@
 import React from "react"
-import AdminList from "../components/sec/Admin"
-import Footer from "../components/sec/Footer"
-import Header from "../components/sec/Header"
+import AdminList from "../components/Admin"
+import Footer from "../components/Footer"
+import Header from "../components/Header"
 
 const Admin = () => {
 var today = new Date();

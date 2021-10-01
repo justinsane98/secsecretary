@@ -1,7 +1,7 @@
 import React from "react"
-import TestimonyList from "../components/sec/Testimony"
-import Footer from "../components/sec/Footer"
-import Header from "../components/sec/Header"
+import TestimonyList from "../components/Testimony"
+import Footer from "../components/Footer"
+import Header from "../components/Header"
 
 const Testimony = () => {
 var today = new Date();

@@ -1,7 +1,7 @@
 import React from "react"
-import Feeds from "../components/sec/Feeds"
-import Footer from "../components/sec/Footer"
-import Header from "../components/sec/Header"
+import Feeds from "../components/Feeds"
+import Footer from "../components/Footer"
+import Header from "../components/Header"
 
 const Week = () => {
   const months = ["January", "February", "March", "April", "May", "June",

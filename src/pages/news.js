@@ -1,7 +1,7 @@
 import React from "react"
-import NewsList from "../components/sec/News"
-import Footer from "../components/sec/Footer"
-import Header from "../components/sec/Header"
+import NewsList from "../components/News"
+import Footer from "../components/Footer"
+import Header from "../components/Header"
 
 const News = () => {
 var today = new Date();

@@ -6,26 +6,7 @@ module.exports = {
   theme: {
     colors: {
       transparent: "transparent",
-      pink: {
-        light: '#FF2EC6',
-        DEFAULT: '#FF00B9',
-        dark: '#CC0094',
-        90 : "rgba(255, 46, 198, 0.90)",
-        75 : "rgba(255, 46, 198, 0.75)",
-        50: "rgba(255, 46, 198, 0.5)",
-        25: "rgba(255, 46, 198, 0.2)",
-        10: "rgba(255, 46, 198, 0.1)"
-      },
-      blue: {
-        light: '#57F1FF',
-        DEFAULT: '#00e9ff',
-        dark: '#00D2E5',
-        90 : "rgba(0, 233, 255, 0.90)",
-        75 : "rgba(0, 233, 255, 0.75)",
-        50: "rgba(0, 233, 255, 0.5)",
-        25: "rgba(0, 233, 255, 0.2)",
-        10: "rgba(0, 233, 255, 0.1)"
-      },
+     
       white: {
         light: "#fff",
         DEFAULT: "#fff",
@@ -51,67 +32,20 @@ module.exports = {
         25: "rgba(0, 0, 0, 0.2)",
         10: "rgba(0, 0, 0, 0.1)"
       },
-      yellow: {
-        light: '#EEE419',
-        DEFAULT: "#ECE100",
-        dark: '#D5CB00',
-      },
-      gold: {
-        light:'#FFD977',
-        DEFAULT: '#FFCC4A',
-        dark: '#BF9937'
-      },
+      
       navy: {
         lighter: "#9AA6B4",
         light: '#50687E',
         DEFAULT: "#163454",
         dark: '#14324D',
         darker: '#10283F'
-      },
-      brown: "#4A491C",
-      red: {
-        light: '#D5423F',
-        DEFAULT: "#D02D2A",
-        dark: '#BC2926',
-        90 : "rgba(208, 45, 42, 0.90)",
-        75 : "rgba(208, 45, 42, 0.75)",
-        50: "rgba(208, 45, 42, 0.5)",
-        25: "rgba(208, 45, 42, 0.2)",
-        10: "rgba(208, 45, 42, 0.1)"
-      },
-      indigo: {
-        light: '#809ae5',
-        DEFAULT: '#5472CC',
-        dark: '#4C6DC4',
-        90 : "rgba(84, 114, 204, 0.90)",
-        75 : "rgba(84, 114, 204, 0.75)",
-        50: "rgba(84, 114, 204, 0.5)",
-        25: "rgba(84, 114, 204, 0.2)",
-        10: "rgba(84, 114, 204, 0.1)"
       }
     },
     fontFamily: {
-      display: ['Abril\\ Fatface', 'serif'],
       serif: ['Playfair\\ Display', 'serif']
     },
     
     extend: {
-      keyframes: {
-        pulse: {
-          '0%, 100%': { opacity: '1' },
-          '50%': { opacity: '0.5' },
-        }
-       },
-      animation: {
-        pulse : 'pulse 3s ease-in-out infinite',
-       },
-      minHeight: {
-        25: "50vh",
-        33: "50vh",
-        50: "50vh",
-        66: "66vh",
-        75: "75vh"
-      },
       screens:{
         '320px': '320px',
         '375px': '375px',

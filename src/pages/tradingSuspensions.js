@@ -1,7 +1,7 @@
 import React from "react"
-import TradingSuspensionsList from "../components/sec/TradingSuspensions"
-import Footer from "../components/sec/Footer"
-import Header from "../components/sec/Header"
+import TradingSuspensionsList from "../components/TradingSuspensions"
+import Footer from "../components/Footer"
+import Header from "../components/Header"
 
 const TradingSuspensions = () => {
 var today = new Date();

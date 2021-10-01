@@ -1,123 +1,52 @@
 import React from "react"
-import Layout from "../components/Layout"
-import data from '../data/data';
-import Lyric from "../components/Lyric";
-import Title from "../components/Title";
-import { motion, AnimatePresence } from 'framer-motion'
-import TransitionLink from "gatsby-plugin-transition-link";
-import bg from "/public/images/home5px.gif"
+import Feeds from "../components/Feeds"
+import Footer from "../components/Footer"
+import Header from "../components/Header"
 
-const props = data.properties[0];
+const Index = () => {
+  const months = ["January", "February", "March", "April", "May", "June",
+    "July", "August", "September", "October", "November", "December"
+  ];
+  var MOD = 0;
+  var message = "has been published today"
+  var today = new Date();
+  var start = new Date(today);
+  start.setDate(start.getDate() - MOD);
+  var startDate = months[start.getMonth()] + " " + (start.getDate()) + ", " + start.getFullYear();
+  var end = new Date(today);
+  end.setDate(end.getDate());
+  var endDate = months[end.getMonth()] + " " + end.getDate() + ", " + end.getFullYear();
 
-const duration = 0.5
-
-const container = {
-  initial: {
-    opacity: 0
-  },
-  enter: {
-    opacity: 1,
-    transition: {
-      when: "beforeChildren",
-      staggerChildren: 0.3,
-      delay: 0,
-      duration: duration
-    },
-  },
-  exit: {
-    opacity: 0,
-    transition: {
-      when: "beforeChildren",
-      staggerChildren: 0.3,
-      delay: 0,
-      duration: duration
-    },
-  }
-};
-const item = {
-  initial: { opacity: 0 },
-  enter: {
-    opacity: 1,
-     transition: {
-      duration: duration
-    },
-  },
-  exit: {
-    opacity: 0,
-  },
-};
-
-
-const variants = {
-  initial: {
-    opacity: 0,
-  },
-  enter: {
-    opacity: 1,
-    transition: {
-      duration: duration,
-      delay: duration,
-      when: 'beforeChildren',
-    },
-  },
-  exit: {
-    opacity: 1,
-    transition: { duration: duration },
-  },
-}
-
-const Index = () => (
+  return (
   <>
-    <Layout>
-    <div className="px-4 425px:px-8 768px:px-12 text-center">
-      <AnimatePresence>
-        <motion.div key="bg" variants={variants}
-          initial="initial"
-          animate="enter"
-          exit="exit"
-          className="absolute bg-cover top-0 left-0 right-0 bottom-0"
-          style={{
-            backgroundImage: "url("+ bg +")",
-            backgroundPosition: "top center",
-            zIndex: -2
-          }}
-        />
-        <motion.div key="content" variants={variants}
-                initial="initial"
-                animate="enter"
-                exit="exit"
-                className="py-24">
-        <motion.div key="title" variants={variants}
-                initial="initial"
-                animate="enter"
-                exit="exit">
-            <Title property={props} />
-        </motion.div>             
-        <motion.ul key="ul" variants={container} 
-            initial="initial"
-            animate="enter"
-            exit="exit"
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="1" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Playfair+Display&display=swap"
+      rel="stylesheet"
+    />
 
-            >
-            {
-              props.lyrics.map(function(obj, i){
-                return (
-                    <motion.li key={"lyrics-" + i} variants={item}>
-                      <Lyric content={obj}  />
-                    </motion.li>
-                )
-              
-              })
-            }
-                        
-            <motion.li key="cta" variants={item} className="pt-4">
-              <TransitionLink to="/about" enter={{ length: duration }}  exit={{ length: duration }} className="font-display text-white shadow text-base 768px:text-lg 1024px:text-xl font-thin uppercase bg-pink py-2 px-4 inline-block shadow-default border-pink border-2 text-white focus:bg-pink-dark active:bg-pink-light hover:bg-pink-light hover:text-white hover:cursor-pointer">{props.cta}</TransitionLink>
-            </motion.li>
-          </motion.ul>
-        </motion.div>
-        </AnimatePresence>
+    <Header/>
+    <div className="my-12 mx-auto max-w-2xl w-3/4 font-serif">
+    <main>
+      <h1 className="text-3xl text-navy text-center">Today at the SEC</h1>
+      <h2 className="mb-4 text-lg text-center">
+         <a className="text-navy-50 inline-block relative top-1 -left-2" href="/yesterday">
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+          </svg>
+        </a>
+        {startDate === endDate ? startDate : (startDate + " - " + endDate)}
+      </h2>
+      
+      <blockquote className="mb-8 text-sm px-6 py-4 border border-navy-light">The official What’s New page for the SEC is no longer updated as of September 30, 2021. To stay current on the most recent materials posted to the SEC website, the SEC suggests subscribing to the <a className="text-navy font-bold hover:underline" href="https://www.sec.gov/about/secrss.shtml">SEC RSS feeds</a>. <span className="font-bold">Or you can let the Secretary take of that for you.</span></blockquote>
+
+      <Feeds start={start} end={end} message={message}/>
+
+      </main>
+      <Footer />
       </div>
-    </Layout>
-</>
-)
+    </>
+  )
+}
 export default Index

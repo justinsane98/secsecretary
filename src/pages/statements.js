@@ -1,7 +1,7 @@
 import React from "react"
-import StatementsList from "../components/sec/Statements"
-import Footer from "../components/sec/Footer"
-import Header from "../components/sec/Header"
+import StatementsList from "../components/Statements"
+import Footer from "../components/Footer"
+import Header from "../components/Header"
 
 const Statements = () => {
 var today = new Date();

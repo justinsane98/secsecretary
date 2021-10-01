@@ -1,9 +1,9 @@
 {
-  "name": "justinshearer_com",
+  "name": "secsecretary",
   "version": "1.0.1",
   "main": "index.js",
-  "repository": "git@github.com:justinsane98/gatsby-justinshearer-com.git",
-  "author": "Justin Shearer <https://justinshearer.com",
+  "repository": "git@github.com:justinsane98/secsecretary.git",
+  "author": "Justin Shearer <https://www.justinshearer.com/",
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",

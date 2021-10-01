@@ -1,7 +1,7 @@
 import React from "react"
-import ProposedRulesList from "../components/sec/ProposedRules"
-import Footer from "../components/sec/Footer"
-import Header from "../components/sec/Header"
+import ProposedRulesList from "../components/ProposedRules"
+import Footer from "../components/Footer"
+import Header from "../components/Header"
 
 const ProposedRules = () => {
 var today = new Date();

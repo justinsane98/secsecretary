@@ -1,7 +1,7 @@
 import React from "react"
-import SpeechesList from "../components/sec/Speeches"
-import Footer from "../components/sec/Footer"
-import Header from "../components/sec/Header"
+import SpeechesList from "../components/Speeches"
+import Footer from "../components/Footer"
+import Header from "../components/Header"
 
 const Speeches = () => {
 var today = new Date();

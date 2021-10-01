@@ -1,7 +1,7 @@
 import React from "react"
-import Feeds from "../components/sec/Feeds"
-import Footer from "../components/sec/Footer"
-import Header from "../components/sec/Header"
+import Feeds from "../components/Feeds"
+import Footer from "../components/Footer"
+import Header from "../components/Header"
 
 const Yesterday = () => {
   const months = ["January", "February", "March", "April", "May", "June",
@@ -37,7 +37,7 @@ return (
           </svg>
         </a>
         {startDate === endDate ? startDate : (startDate + " - " + endDate)}
-        <a className="text-navy-50 inline-block relative top-1 left-2" href="/sec">
+        <a className="text-navy-50 inline-block relative top-1 left-2" href="/">
           <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
           </svg>

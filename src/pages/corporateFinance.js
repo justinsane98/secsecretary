@@ -1,7 +1,7 @@
 import React from "react"
-import CorporateFinanceList from "../components/sec/CorporateFinance"
-import Footer from "../components/sec/Footer"
-import Header from "../components/sec/Header"
+import CorporateFinanceList from "../components/CorporateFinance"
+import Footer from "../components/Footer"
+import Header from "../components/Header"
 
 const CorporateFinance = () => {
 var today = new Date();

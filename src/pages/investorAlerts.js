@@ -1,7 +1,7 @@
 import React from "react"
-import InvestorAlertsList from "../components/sec/InvestorAlerts"
-import Footer from "../components/sec/Footer"
-import Header from "../components/sec/Header"
+import InvestorAlertsList from "../components/InvestorAlerts"
+import Footer from "../components/Footer"
+import Header from "../components/Header"
 
 const InvestorAlerts = () => {
 var today = new Date();

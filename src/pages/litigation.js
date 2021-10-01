@@ -1,7 +1,7 @@
 import React from "react"
-import LitigationList from "../components/sec/Litigation"
-import Footer from "../components/sec/Footer"
-import Header from "../components/sec/Header"
+import LitigationList from "../components/Litigation"
+import Footer from "../components/Footer"
+import Header from "../components/Header"
 
 const Litigation = () => {
 var today = new Date();

@@ -1,7 +1,7 @@
 import React from "react"
-import InvestmentManagementList from "../components/sec/InvestmentManagement"
-import Footer from "../components/sec/Footer"
-import Header from "../components/sec/Header"
+import InvestmentManagementList from "../components/InvestmentManagement"
+import Footer from "../components/Footer"
+import Header from "../components/Header"
 
 const InvestmentManagement = () => {
 var today = new Date();
