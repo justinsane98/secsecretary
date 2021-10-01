@@ -1,20 +1,18 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 
-const Statements = ({startDate, endDate, message}) => {
+const InvestmentManagement = ({startDate, endDate}) => {
 
   const data = useStaticQuery(graphql`
   {
-    allFeedStatements {
+    allFeedInvestmentManagement {
       nodes {
-        content
-        guid
-        pubDate
         title
+        pubDate
         link
+        content
       }
     }
-  
   }
 `)
 
@@ -23,7 +21,7 @@ const Statements = ({startDate, endDate, message}) => {
   ];
 
   let feed = [];
-  let nodes = data.allFeedStatements.nodes;
+  let nodes = data.allFeedInvestmentManagement.nodes;
 
   nodes.forEach(function(entry, i) {
     let entryDay = entry.pubDate.split(" ")[1]
@@ -48,13 +46,13 @@ const Statements = ({startDate, endDate, message}) => {
   
   return (
     <>
-    <ul className={(feed.length > 0 ? "" : "hidden") +" 768px:flex 768px:flex-wrap 768px:-mx-8"}>
-      {feed}
-    </ul>
-    <p className={(feed.length > 0 ? "hidden" : "") + " py-4 opacity-50"}>
-      No statement {message}.
-    </p>
-    </>
+     <ul className={(feed.length > 0 ? "" : "hidden") +" 768px:flex 768px:flex-wrap 768px:-mx-8"}>
+        {feed}
+      </ul>
+      <p className={(feed.length > 0 ? "hidden" : "") + " py-4 opacity-50"}>
+        The feed has not been updated since 2019. However, there is current news available:  <br/><a className="text-large text-navy font-bold hover:underline" href="https://www.sec.gov/investment-management/whats-new">https://www.sec.gov/investment-management/whats-new</a>
+      </p>
+      </>
     )
 }
-export default Statements
+export default InvestmentManagement

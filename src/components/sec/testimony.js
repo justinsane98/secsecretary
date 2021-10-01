@@ -1,7 +1,7 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 
-const Testimony = ({startDate, endDate}) => {
+const Testimony = ({startDate, endDate, message}) => {
 
   const data = useStaticQuery(graphql`
   {
@@ -52,7 +52,7 @@ const Testimony = ({startDate, endDate}) => {
         {feed}
       </ul>
       <p className={(feed.length > 0 ? "hidden" : "") + " py-4 opacity-50"}>
-        No testimony has been published today.
+        No testimony {message}.
       </p>
     </>
   )

@@ -1,7 +1,7 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 
-const TradingSuspensions = ({startDate, endDate}) => {
+const TradingSuspensions = ({startDate, endDate, message}) => {
 
   const data = useStaticQuery(graphql`
   {
@@ -49,7 +49,7 @@ const TradingSuspensions = ({startDate, endDate}) => {
         {feed}
       </ul>
       <p className={(feed.length > 0 ? "hidden" : "") + " py-4 opacity-50"}>
-        No suspension has been published today.
+        No suspension {message}.
       </p>
       </>
     )

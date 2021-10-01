@@ -1,7 +1,7 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 
-const ProposedRules = ({startDate, endDate}) => {
+const ProposedRules = ({startDate, endDate, message}) => {
 
   const data = useStaticQuery(graphql`
   {
@@ -47,7 +47,7 @@ const ProposedRules = ({startDate, endDate}) => {
         {feed}
       </ul>
       <p className={(feed.length > 0 ? "hidden" : "") + " py-4 opacity-50"}>
-        No proposed rule has been published today.
+        No proposed rule {message}.
       </p>
       </>
     )
