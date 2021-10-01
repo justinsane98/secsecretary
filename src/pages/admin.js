@@ -1,6 +1,7 @@
 import React from "react"
 import AdminList from "../components/sec/Admin"
 import Footer from "../components/sec/Footer"
+import Header from "../components/sec/Header"
 
 const Admin = () => {
 var today = new Date();
@@ -18,18 +19,7 @@ return (
       rel="stylesheet"
     />
 
-    <header className="bg-navy py-1">
-      <div className="relative px-4 mx-auto max-w-2xl">
-        <a className="absolute top-0 left-0 text-white-50" href="/sec">
-        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-        </svg>
-      </a>
-        <h3 className="text-white-50 font-serif text-center text-sm uppercase">Secretary of the Secretary</h3>
-      </div>
-      
-
-    </header>
+    <Header/>
     <div className="my-12 mx-auto max-w-2xl w-3/4 font-serif">
       <main>
         <section className="mb-12 relative">

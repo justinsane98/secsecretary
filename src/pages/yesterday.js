@@ -8,6 +8,7 @@ import Admin from "../components/sec/Admin"
 import TradingSuspensions from "../components/sec/TradingSuspensions"
 import Footer from "../components/sec/Footer"
 import ProposedRules from "../components/sec/ProposedRules"
+import Header from "../components/sec/Header"
 
 const Yesterday = () => {
   const months = ["January", "February", "March", "April", "May", "June",
@@ -31,12 +32,7 @@ return (
       rel="stylesheet"
     />
 
-    <header className="bg-navy text-center px-12 relative">
-    <div className="absolute top-2 left-12 bg-white-10 h-0.5 right-12 w-100 z-0"></div>
-      <div className="absolute top-3 left-10 bg-white-10 h-0.5 right-10 w-100 z-0"></div>
-      <div className="absolute top-4 left-12 bg-white-10 h-0.5 right-12 w-100 z-0"></div>
-      <span className="relative inline-block bg-navy py-1 px-2 text-sm uppercase text-white-50 font-serif z-1">Secretary of the Secretary</span>
-    </header>
+    <Header/>
     <div className="my-12 mx-auto max-w-2xl w-3/4 font-serif">
     <main>
       <h1 className="text-3xl text-navy text-center">Yesterday at the SEC</h1>
