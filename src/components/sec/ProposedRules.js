@@ -1,7 +1,7 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 
-const ProposedRules = ({rssUrl, sourceUrl, title, startDate, endDate}) => {
+const ProposedRules = ({startDate, endDate}) => {
 
   const data = useStaticQuery(graphql`
   {

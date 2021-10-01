@@ -9,6 +9,7 @@ import TradingSuspensions from "../components/sec/TradingSuspensions"
 import Footer from "../components/sec/Footer"
 import ProposedRules from "../components/sec/ProposedRules"
 import Header from "../components/sec/Header"
+import CorporateFinance from "../components/sec/CorporateFinance"
 
 const Sec = () => {
   const months = ["January", "February", "March", "April", "May", "June",
@@ -108,6 +109,14 @@ return (
         <ProposedRules startDate={start} endDate={end} />
         <div className="425px:absolute top-2 right-0 text-navy">
           <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 inline-block relative -top-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg> <a className="inline-block hover:underline" href="/proposedRules">Past Proposals</a>
+        </div>     
+      </section>
+
+      <section className="mb-12 relative">
+        <h2 className="text-2xl border-b border-black-25 pb-2">Corporate Finance</h2>
+        <CorporateFinance startDate={start} endDate={end} />
+        <div className="425px:absolute top-2 right-0 text-navy">
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 inline-block relative -top-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg> <a className="inline-block hover:underline" href="/corporateFinance">Past Information</a>
         </div>     
       </section>
       

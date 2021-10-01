@@ -1,7 +1,7 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 
-const TradingSuspensions = ({rssUrl, sourceUrl, title, startDate, endDate}) => {
+const TradingSuspensions = ({startDate, endDate}) => {
 
   const data = useStaticQuery(graphql`
   {

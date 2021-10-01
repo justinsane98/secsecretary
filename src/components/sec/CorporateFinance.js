@@ -1,20 +1,18 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 
-const Statements = ({startDate, endDate}) => {
+const CorporateFinance = ({startDate, endDate}) => {
 
   const data = useStaticQuery(graphql`
   {
-    allFeedStatements {
+    allFeedCorporateFinance {
       nodes {
-        content
-        guid
-        pubDate
         title
+        pubDate
         link
+        content
       }
     }
-  
   }
 `)
 
@@ -23,7 +21,7 @@ const Statements = ({startDate, endDate}) => {
   ];
 
   let feed = [];
-  let nodes = data.allFeedStatements.nodes;
+  let nodes = data.allFeedCorporateFinance.nodes;
 
   nodes.forEach(function(entry, i) {
     let entryDay = entry.pubDate.split(" ")[1]
@@ -48,13 +46,13 @@ const Statements = ({startDate, endDate}) => {
   
   return (
     <>
-    <ul className={(feed.length > 0 ? "" : "hidden") +" 768px:flex 768px:flex-wrap 768px:-mx-8"}>
-      {feed}
-    </ul>
-    <p className={(feed.length > 0 ? "hidden" : "") + " py-4 opacity-50"}>
-      No statement have been published today.
-    </p>
-    </>
+     <ul className={(feed.length > 0 ? "" : "hidden") +" 768px:flex 768px:flex-wrap 768px:-mx-8"}>
+        {feed}
+      </ul>
+      <p className={(feed.length > 0 ? "hidden" : "") + " py-4 opacity-50"}>
+        No information has been published today.
+      </p>
+      </>
     )
 }
-export default Statements
+export default CorporateFinance
