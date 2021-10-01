@@ -13,7 +13,7 @@ function Footer(props) {
         ,&nbsp;<a className="font-bold hover:underline" href="https://www.sec.gov/news/whatsnew/wn-archive.shtml">Previous What’s New Issues</a>
         ,&nbsp;<a className="font-bold hover:underline" href="https://www.sec.gov/news/digest.shtml">News Digest Archives (1956-2013)</a>
         </p>
-        <p className="mb-8">Missing something? Please <a className="font-bold hover:underline" href="https://twitter.com/justinsane98">let me know</a> and we will try to add it.</p>
+        <p className="mb-8">Missing something? Please <a className="font-bold hover:underline" href="https://twitter.com/justinsane98">let me know</a> and I will try to add it.</p>
         <a className="inline-block w-50 opacity-50 hover:opacity-100" href="https://cash.app/$hearer"><img src={QR} alt="$hearer"/></a>
         <p className="my-2">No Ads. Like my work? Please consider tipping.</p>
       </div>
