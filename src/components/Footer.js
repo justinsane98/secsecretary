@@ -15,7 +15,8 @@ function Footer(props) {
         </p>
         <p className="mb-8">Missing something? Please <a className="font-bold hover:underline" href="https://twitter.com/justinsane98">let me know</a> and I will try to add it.</p>
         <a className="inline-block w-20 opacity-50 hover:opacity-100" href="https://cash.app/$hearer"><img src={QR} alt="$hearer"/></a>
-        <p className="my-2 p-2 bg-black-10">33o3mMHWGy6MYRB5d5QcLA8nbNhzAbKjjt</p>
+        <br/>
+        <a className="my-2 py-1 px-2 bg-black-10 hover:cursor-pointer hover:bg-black hover:text-white">33o3mMHWGy6MYRB5d5QcLA8nbNhzAbKjjt</a>
         <p className="my-2">No Ads. Like my work?<br/>Please consider tipping.</p>
       </div>
   );
