@@ -27,7 +27,7 @@ const Index = () => {
     />
 
     <Header/>
-    <div className="my-12 mx-auto max-w-2xl w-3/4 font-serif">
+    <div className="my-12 mx-4 768px:mx-auto 768px:max-w-2xl 768px:w-3/4 1200px:w-1/2 font-serif">
     <main>
       <h1 className="text-3xl text-navy text-center">Today at the SEC</h1>
       <h2 className="mb-4 text-lg text-center">
