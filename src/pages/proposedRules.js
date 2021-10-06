@@ -1,5 +1,6 @@
 import React from "react"
-import ProposedRulesList from "../components/ProposedRules"
+import { useStaticQuery, graphql } from "gatsby"
+import Feed from "../components/Feed"
 import Footer from "../components/Footer"
 import Header from "../components/Header"
 
@@ -9,6 +10,20 @@ var start = new Date(today);
 start.setDate(start.getDate()-99999);
 var end = new Date(today);
 end.setDate(end.getDate());
+
+const data = useStaticQuery(graphql`
+{
+  allFeedProposedRules {
+    nodes {
+      guid
+      pubDate
+      title
+      link
+    }
+  }
+}
+`)
+const nodes = data.allFeedProposedRules.nodes;
 
 return (
   <>
@@ -23,9 +38,8 @@ return (
     <div className="my-12 mx-auto max-w-2xl w-3/4 font-serif">
       <main>
         <section className="mb-12 relative">
-          <h2 className="text-2xl border-b border-black-25 pb-2">Proposed Rules</h2>
-          <ProposedRulesList startDate={start} endDate={end} />
-          <div className="425px:absolute top-2 right-0">
+          <Feed title="Proposed Rules" startDate={start} endDate={end} nodes={nodes} link="/proposedRules" />
+          <div className="relative -top-10 -mt-8 425px:mt-0 425px:absolute 425px:top-2 425px:right-0 bg-white 425px:text-right 425px:w-1/2">
             <a className="text-gold leading-loose hover:underline" href="https://www.sec.gov/rss/rules/proposed.xml">XML</a> | <a className="inline-block text-navy hover:underline" href="https://www.sec.gov/rules/proposed.shtml">Source</a>
           </div>    
         </section>

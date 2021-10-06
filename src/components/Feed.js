@@ -1,30 +1,12 @@
 import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
 
-const Speeches = ({startDate, endDate, message}) => {
-
-  const data = useStaticQuery(graphql`
-  {
-    allFeedSpeeches {
-      nodes {
-        content
-        guid
-        pubDate
-        title
-        link
-      }
-    }
-  
-  }
-`)
+const Feed = ({startDate, endDate, nodes, title, link}) => {
 
   const months = ["January", "February", "March", "April", "May", "June",
     "July", "August", "September", "October", "November", "December"
   ];
-
   let feed = [];
-  let nodes = data.allFeedSpeeches.nodes;
-
+ 
   nodes.forEach(function(entry, i) {
   let entryDay = entry.pubDate.split(" ")[1]
   let entryMonth = entry.pubDate.split(" ")[2]
@@ -37,7 +19,7 @@ const Speeches = ({startDate, endDate, message}) => {
 
   if(entryDate.setHours(0,0,0,0) >= startDate.setHours(0,0,0,0) && entryDate.setHours(0,0,0,0) <= endDate.setHours(0,0,0,0)){ 
     feed.push (
-      <li className="768px:flex-col 768px:w-1/2 768px:px-8 py-4" key={entry.title + i}>
+      <li className="py-4" key={entry.title + i}>
         <a className="text-large text-navy font-bold hover:underline" href={entry.link}>{entry.title}</a>
         <p className="opacity-90">{content}</p>
         <p className="text-sm opacity-25">{entryMonth} {entryDay} {entryHour}:{entryMinute} EST</p>
@@ -48,13 +30,21 @@ const Speeches = ({startDate, endDate, message}) => {
 
 return (
   <>
-    <ul className={(feed.length > 0 ? "" : "hidden") +" 768px:flex 768px:flex-wrap 768px:-mx-8"}>
-      {feed}
-    </ul>
-    <p className={(feed.length > 0 ? "hidden" : "") + " py-4 opacity-50"}>
-      No speech {message}.
-    </p>
-    </>
+      <section className={(feed.length > 0 ? "" : "hidden") + " mb-12 relative "}>
+        <h2 className="text-2xl border-b border-black-25 pb-2">{title}</h2>
+            
+        <div className={(feed.length > 0 ? "" : "hidden")}>
+          <ul>
+            {feed}
+          </ul>
+        </div>
+
+        <div className={(feed.length > 0 ? "" : "hidden") + " 425px:absolute top-2 right-0 text-navy"}>
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 inline-block relative -top-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg> <a className="inline-block hover:underline" href={link}>Archives</a>
+        </div>     
+      </section>    
+
+  </>
   )
 }
-export default Speeches
+export default Feed

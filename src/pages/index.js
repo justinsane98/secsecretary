@@ -28,7 +28,7 @@ const Index = () => {
 
     <Header/>
     <div className="my-12 mx-4 768px:mx-auto 768px:max-w-2xl 768px:w-3/4 1200px:w-1/2 font-serif">
-    <main>
+    <main className="min-h-screen">
       <h1 className="text-3xl text-navy text-center">Today at the SEC</h1>
       <h2 className="mb-4 text-lg text-center">
          <a className="text-navy-50 inline-block relative top-1 -left-2" href="/yesterday">
@@ -41,8 +41,7 @@ const Index = () => {
       
       <blockquote className="mb-8 text-sm px-6 py-4 border border-navy-light">The official What’s New page for the SEC is no longer updated as of September 30, 2021. To stay current on the most recent materials posted to the SEC website, the SEC suggests subscribing to the <a className="text-navy font-bold hover:underline" href="https://www.sec.gov/about/secrss.shtml">SEC RSS feeds</a>. <span className="font-bold">Or you can let the Secretary take of that for you.</span></blockquote>
 
-      <Feeds start={start} end={end} message={message}/>
-
+        <Feeds start={start} end={end} message={message}/>
       </main>
       <Footer />
       </div>
