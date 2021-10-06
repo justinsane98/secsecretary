@@ -39,7 +39,12 @@ module.exports = {
         DEFAULT: "#163454",
         dark: '#14324D',
         darker: '#10283F'
-      }
+      },
+      gold: {
+        light:'#FFD977',
+        DEFAULT: '#FFCC4A',
+        dark: '#BF9937'
+      },
     },
     fontFamily: {
       serif: ['Playfair\\ Display', 'serif']
