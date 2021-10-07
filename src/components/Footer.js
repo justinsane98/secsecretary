@@ -48,10 +48,10 @@ function Footer(props) {
                 <a className="inline-block w-20 opacity-50 hover:opacity-100 border-2 border-white rounded" href="https://cash.app/$hearer"><img src={QR} alt="$hearer"/></a>
               </div>
               <div className="w-full 768px:w-5/6">
-                <p className="-mb-2">No Ads. Like my work? Please consider tipping.</p>
-                <p className="-mb-2">Bitcoin: <a onClick={(e)=> {e.preventDefault();e.target.focus();navigator.clipboard.writeText("33o3mMHWGy6MYRB5d5QcLA8nbNhzAbKjjt")}} href="#33o3mMHWGy6MYRB5d5QcLA8nbNhzAbKjjt" className="group inline-block my-2"><span className="bg-black-10 py-1 px-2 hover:cursor-pointer group-hover:bg-white-10 group-hover:text-navy group-active:bg-white-50 group-focus:text-navy group-focus:bg-white-50">33o3mMHWGy6MYRB5d5QcLA8nbNhzAbKjjt</span><span className="opacity-0 bg-white-25 py-1 px-2 group-focus:opacity-100 group-active:opacity-100">Copied!</span></a></p>
-                <p className="mb-8">Missing something? Please <a className="text-white-50 hover:underline" href="https://twitter.com/justinsane98">let me know</a> and I will try to add it.</p>
-              </div>
+                <p className="">Missing something? Please <a className="text-white-50 hover:underline" href="https://twitter.com/justinsane98">let me know</a> and I will try to add it.</p>
+                <p className="-mb-2">No Ads. Like the free service? Please consider tipping.</p>
+                <p className="mb-8">Bitcoin: <a onClick={(e)=> {e.preventDefault();e.target.focus();navigator.clipboard.writeText("33o3mMHWGy6MYRB5d5QcLA8nbNhzAbKjjt")}} href="#33o3mMHWGy6MYRB5d5QcLA8nbNhzAbKjjt" className="group inline-block my-2"><span className="bg-black-10 py-1 px-2 hover:cursor-pointer group-hover:bg-white-10 group-hover:text-navy group-active:bg-white-50 group-focus:text-navy group-focus:bg-white-50">33o3mMHWGy6MYRB5d5QcLA8nbNhzAbKjjt</span><span className="opacity-0 bg-white-25 py-1 px-2 group-focus:opacity-100 group-active:opacity-100">Copied!</span></a></p>
+                </div>
               </div>
             </div>
         </div>
