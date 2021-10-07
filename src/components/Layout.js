@@ -13,7 +13,7 @@ function Layout({props, children}) {
       />
       <div className="font-serif">
         <Header/>
-        <div className="mt-12 mx-4 768px:mx-auto 768px:max-w-2xl 768px:w-3/4 1200px:w-1/2">
+        <div className="mt-12 mx-4 768px:mx-12 1200px:mx-auto 1200px:w-3/4 1400px:w-1/2">
           <main className="min-h-full pb-12 relative">
             {children}
           </main>

@@ -22,7 +22,7 @@ const Feed = ({startDate, endDate, nodes, title, link}) => {
       <li className="py-4" key={entry.title + i}>
         <a className="text-large text-navy font-bold hover:underline" href={entry.link}>{entry.title}</a>
         <p className="opacity-90">{content}</p>
-        <p className="text-sm opacity-25">{entryMonth} {entryDay} {entryHour}:{entryMinute} EST</p>
+        <p className="text-sm opacity-50">{entryMonth} {entryDay} {entryHour}:{entryMinute} EST</p>
       </li>
     );
   }

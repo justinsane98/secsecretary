@@ -27,7 +27,7 @@ const Index = () => {
         </a>
         <span className="ml-2">{startDate === endDate ? startDate : (startDate + " - " + endDate)}</span>
       </h2>
-      <blockquote className="mb-8 text-sm px-6 py-4 border border-navy-light">The official What’s New page for the SEC is no longer updated as of September 30, 2021. To stay current on the most recent materials posted to the SEC website, the SEC suggests subscribing to the <a className="text-navy font-bold hover:underline" href="https://www.sec.gov/about/secrss.shtml">SEC RSS feeds</a>. <span className="font-bold">Or you can let the Secretary take of that for you.</span></blockquote>
+      <blockquote className="mb-8 text-sm px-6 py-4 border border-black-25 bg-black-10 opacity-75">The official What’s New page for the SEC is no longer updated as of September 30, 2021. To stay current on the most recent materials posted to the SEC website, the SEC suggests subscribing to the <a className="text-navy font-bold hover:underline" href="https://www.sec.gov/about/secrss.shtml">SEC RSS feeds</a>. <span className="font-bold">Or you can let the Secretary take of that for you.</span></blockquote>
       <Feeds start={start} end={end} />
     </Layout>
     </>
