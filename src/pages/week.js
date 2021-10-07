@@ -19,10 +19,10 @@ var endDate = months[end.getMonth()] + " " + end.getDate() + ", " + end.getFullY
 return (
   <>
     <Layout>
-      <h1 className="text-3xl text-navy 768px:mb-8">This week at the SEC</h1>
-      <h2 className="mb-4 text-lg 768px:absolute top-3 right-0">
-        {startDate === endDate ? startDate : (startDate + " - " + endDate)}
-        <a className="text-navy-50 inline-block relative top-1 left-2" href="/yesterday">
+      <h1 className="text-3xl text-navy 1024px:mb-8">This week at the SEC</h1>
+      <h2 className="mb-4 text-lg 1024px:absolute top-3 right-0">
+      <span className="pr-2">{startDate === endDate ? startDate : (startDate + " - " + endDate)}</span>
+        <a className="text-navy-50 inline-block relative top-1 left-0" href="/yesterday">
           <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
           </svg>

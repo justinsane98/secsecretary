@@ -28,7 +28,7 @@ function Footer(props) {
     <footer className="mt-12 bg-navy">
       <div className="py-12 mx-4 768px:mx-auto 768px:max-w-2xl 768px:w-3/4 1200px:w-1/2">
         <div className="text-white">
-          <h3 className="text-2xl font-bold text-black-75">Don't see what you are looking for?</h3>
+          <h3 className="text-2xl font-bold text-black-50">Don't see what you are looking for?</h3>
           <h3 className="text-3xl font-bold mb-8 opacity-75">Dive into the archives</h3>
         
           <ul className="flex flex-wrap opacity-50">
@@ -36,7 +36,7 @@ function Footer(props) {
           </ul>
         </div>
         <div className="mt-12 pt-12 text-black text-sm border-t border-black-25 leading-loose">
-          <h3 className="text-lg pb-2 font-bold opacity-75">Fineprint / Legalese</h3>
+          <h3 className="text-lg pb-2 font-bold opacity-50">Fineprint / Legalese</h3>
           <p className="mb-2 text-white-25">This page provides a free daily list of the most recent materials posted to the SEC website. The official release date of a document may differ from the posting date so always verify the source documents. Some legacy sections do not have data feeds, the SEC has been notified and I hope they will provide a feed in the future or I will look into alternative methods of acquiring the information. </p>
           <div className="text-white-25">
             <p className="mb-2">Those sections include: <a className="text-white-50 hover:underline" href="https://www.sec.gov/rules/other.htm">Other Commission Orders, Notices, and Information</a>, <a className="text-white-50 hover:underline" href="https://www.sec.gov/about/upcoming-events.htm">Upcoming Events</a></p>
