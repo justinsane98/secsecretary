@@ -1,8 +1,7 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Feed from "../components/Feed"
-import Footer from "../components/Footer"
-import Header from "../components/Header"
+import Layout from "../components/Layout"
 
 const News = () => {
 var today = new Date();
@@ -27,24 +26,15 @@ const data = useStaticQuery(graphql`
 const nodes = data.allFeedNews.nodes;
 
 return (
-  <>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="1" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Playfair+Display&display=swap"
-      rel="stylesheet"
-    />
-
-    <Header/>
-    <div className="my-12 mx-auto max-w-2xl w-3/4 font-serif">
-      <main className="relative">
+    <>
+    <Layout>
+      <section className="mb-12 relative">
         <Feed title="News" startDate={start} endDate={end} nodes={nodes} link="/news" />
         <div className="relative -top-10 -mt-8 425px:mt-0 425px:absolute 425px:top-2 425px:right-0 bg-white 425px:text-right 425px:w-1/2">
           <a className="text-gold leading-loose hover:underline" href="https://www.sec.gov/rss/news/press.xml">XML</a> | <a className="inline-block text-navy hover:underline" href="https://www.sec.gov/news/pressreleases">Source</a>
-        </div>    
-      </main>
-      <Footer />
-    </div>
+        </div>
+        </section>    
+      </Layout>
     </>
   )
 }

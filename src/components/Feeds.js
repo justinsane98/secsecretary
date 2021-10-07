@@ -2,7 +2,7 @@ import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Feed from "./Feed"
 
-const Feeds = ({start, end, message}) => {
+const Feeds = ({start, end}) => {
   const data = useStaticQuery(graphql`
   {
     allFeedNews {
