@@ -28,15 +28,15 @@ function Footer(props) {
     <footer className="mt-12 bg-navy">
       <div className="py-12 mx-4 768px:mx-12 1200px:mx-auto 1200px:w-3/4 1400px:w-1/2">
         <div className="text-white">
-          <h3 className="text-2xl text-black-50">Don't see what you are looking for?</h3>
-          <h3 className="text-3xl mb-4 opacity-75">Dive into the Archives</h3>
+          <h3 className="text-xl text-black-50">Don't see what you are looking for?</h3>
+          <h3 className="text-3xl mb-6 opacity-75">Dive into the Archives</h3>
         
           <ul className="flex flex-wrap opacity-50">
             {archives}
           </ul>
         </div>
         <div className="mt-12 pt-12 text-black text-sm border-t border-black-25 leading-loose">
-          <h3 className="text-lg pb-2 opacity-50">Disclaimers</h3>
+          <h3 className="text-xl pb-2 text-black-50">Disclaimers</h3>
           <p className="text-white-25">The Sec Secretary provides a free digest of the most recent materials posted by the SEC, updated fresh every 15 minutes Monday-Fridays EST excluding official holidays observed by the SEC. The official release date of a document may differ from the posting date so always verify the source documents. Some legacy sections do not have data feeds, the SEC has been notified and I hope they will provide a feed in the future or I will look into alternative methods of acquiring the information. Those sections include: <a className="text-white-50 hover:underline" href="https://www.sec.gov/rules/other.htm">Other Commission Orders, Notices, and Information</a>, <a className="text-white-50 hover:underline" href="https://www.sec.gov/about/upcoming-events.htm">Upcoming Events</a></p>
           <div className="text-white-25">
             <p className="mb-12">Coming soon:&nbsp;<a className="text-white-50 hover:underline" href="https://www.sec.gov/cgi-bin/browse-edgar?action=getcurrent">Latest Filings</a>
