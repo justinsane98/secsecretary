@@ -21,7 +21,7 @@ function Footer(props) {
 
   archiveLinks.forEach(function(entry, i) {
     archives.push (
-      <li key={("footer-" + entry[1] + i)} className="w-full 425px:w-1/2 1024px:w-1/3 mb-2"><a className="hover:underline" href={entry[1]}>{entry[0]}</a></li>
+      <li key={("footer-" + entry[1] + i)} className="w-full 425px:w-1/2 1200px:w-1/3 mb-2"><a className="hover:underline" href={entry[1]}>{entry[0]}</a></li>
     );
   });
   return (
@@ -39,13 +39,13 @@ function Footer(props) {
           <h3 className="text-lg pb-2 font-bold opacity-75">Fineprint / Legalese</h3>
           <p className="mb-2 text-white-25">This page provides a free daily list of the most recent materials posted to the SEC website. The official release date of a document may differ from the posting date so always verify the source documents. Some legacy sections do not have data feeds, the SEC has been notified and I hope they will provide a feed in the future or I will look into alternative methods of acquiring the information. </p>
           <div className="text-white-25">
-            <p className="mb-2">Those sections include: <a className="font-bold hover:underline" href="https://www.sec.gov/rules/other.htm">Other Commission Orders, Notices, and Information</a>, <a className="font-bold hover:underline" href="https://www.sec.gov/about/upcoming-events.htm">Upcoming Events</a></p>
-            <p className="mb-2">Coming soon:&nbsp;<a className="hover:underline" href="https://www.sec.gov/cgi-bin/browse-edgar?action=getcurrent">Latest Filings</a>
-            ,&nbsp;<a className="hover:underline" href="https://www.sec.gov/news/whatsnew/wn-archive.shtml">Previous What’s New Issues</a>
-            ,&nbsp;<a className="hover:underline" href="https://www.sec.gov/news/digest.shtml">News Digest Archives (1956-2013)</a>
+            <p className="mb-2">Those sections include: <a className="text-white-50 hover:underline" href="https://www.sec.gov/rules/other.htm">Other Commission Orders, Notices, and Information</a>, <a className="text-white-50 hover:underline" href="https://www.sec.gov/about/upcoming-events.htm">Upcoming Events</a></p>
+            <p className="mb-2">Coming soon:&nbsp;<a className="text-white-50 hover:underline" href="https://www.sec.gov/cgi-bin/browse-edgar?action=getcurrent">Latest Filings</a>
+            ,&nbsp;<a className="text-white-50 hover:underline" href="https://www.sec.gov/news/whatsnew/wn-archive.shtml">Previous What’s New Issues</a>
+            ,&nbsp;<a className="text-white-50 hover:underline" href="https://www.sec.gov/news/digest.shtml">News Digest Archives (1956-2013)</a>
             </p>
             
-            <p className="mb-8">Missing something? Please <a className="font-bold hover:underline" href="https://twitter.com/justinsane98">let me know</a> and I will try to add it.</p>
+            <p className="mb-8">Missing something? Please <a className="text-white-50 hover:underline" href="https://twitter.com/justinsane98">let me know</a> and I will try to add it.</p>
             <a className="inline-block w-20 opacity-50 hover:opacity-100 border-2 border-white rounded" href="https://cash.app/$hearer"><img src={QR} alt="$hearer"/></a>
             <br/>
             <a href="33o3mMHWGy6MYRB5d5QcLA8nbNhzAbKjjt" className="my-2 py-1 px-2 bg-black-10 hover:cursor-pointer hover:bg-white-10 hover:text-navy active:bg-white-50">33o3mMHWGy6MYRB5d5QcLA8nbNhzAbKjjt</a>
