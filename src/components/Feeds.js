@@ -102,6 +102,15 @@ const Feeds = ({start, end}) => {
         link
       }
     }
+    allFeedFederalRegister {
+      nodes {
+        content
+        guid
+        pubDate
+        title
+        link
+      }
+    }
   }
 `)
 const newsNodes = data.allFeedNews.nodes;
@@ -115,6 +124,7 @@ const proposedRulesNodes = data.allFeedProposedRules.nodes;
 const corporateFinanceNodes = data.allFeedCorporateFinance.nodes;
 const investorAlertsNodes = data.allFeedInvestorAlerts.nodes;
 const investmentManagementNodes = data.allFeedInvestmentManagement.nodes;
+const federalRegisterNodes = data.allFeedFederalRegister.nodes;
 
 return (
   <>
@@ -131,8 +141,9 @@ return (
   <Feed title="Corporate Finance" startDate={start} endDate={end} nodes={corporateFinanceNodes} link="/corporateFinance" />
   <Feed title="Investor Alerts" startDate={start} endDate={end} nodes={investorAlertsNodes} link="/investorAlerts" />
   <Feed title="Investment Management" startDate={start} endDate={end} nodes={investmentManagementNodes} link="/investmentManagement" />
-
-
+  
+  {/* Updated at 4PM EST */}
+  <Feed title="Federal Register" startDate={start} endDate={end} nodes={federalRegisterNodes} link="/federalRegister" />
 
         {/* 
 

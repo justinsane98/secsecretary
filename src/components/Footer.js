@@ -17,6 +17,7 @@ function Footer(props) {
     ["Corporate Finance", "/coporateFinance"],
     ["Investor Alerts", "/investorAlerts"],
     ["Investment Management", "/investmentManagement"],
+    ["Federal Register", "/federalRegister"],
   ]
 
   archiveLinks.forEach(function(entry, i) {

@@ -90,6 +90,13 @@ module.exports = {
         name: `InvestorAlerts`,
       }
     },
+    {
+      resolve: `gatsby-source-rss-feed`,
+      options: {
+        url: `https://www.federalregister.gov/api/v1/documents.rss?&conditions%5Bagency_ids%5D%5B%5D=466&order=newest`,
+        name: `FederalRegister`,
+      }
+    },
     "gatsby-plugin-react-helmet",
     {
       resolve: "gatsby-plugin-manifest",
