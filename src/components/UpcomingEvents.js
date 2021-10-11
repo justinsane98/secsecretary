@@ -11,7 +11,7 @@ const Feeds = ({start, end}) => {
     <div>
 
       <Feed title="Meetings" startDate={start} endDate={end} nodes={MeetingsData} link="/meetings" singleColumn="true" />
-      <Feed title="Appearances" startDate={start} endDate={end} nodes={AppearancesData} link="/Appearances" singleColumn="true"/>
+      <Feed title="Appearances" startDate={start} endDate={end} nodes={AppearancesData} link="/appearances" singleColumn="true"/>
 
     </div>
     </>
