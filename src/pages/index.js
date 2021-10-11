@@ -9,6 +9,8 @@ const Index = () => {
   ];
   var MOD = 7;
   var today = new Date();
+  var todayDate = months[today.getMonth()] + " " + (today.getDate()) + ", " + today.getFullYear();
+  
   var start = new Date(today);
   start.setDate(start.getDate() - MOD);
   var startDate = months[start.getMonth()] + " " + (start.getDate()) + ", " + start.getFullYear();
@@ -34,7 +36,7 @@ const Index = () => {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
             </svg>
           </a> */}
-          <span className="ml-2">{startDate === endDate ? startDate : (startDate + " - " + endDate)}</span>
+          <span>{startDate === endDate ? startDate : (startDate + " - " + endDate)}</span>
         </h2>
         <blockquote className="mb-8 text-sm px-6 py-4 border border-black-25 bg-black-10 opacity-75">The official What’s New page for the SEC is no longer updated as of September 30, 2021. To stay current on the most recent materials posted to the SEC website, the SEC suggests subscribing to the <a className="text-navy font-bold hover:underline" href="https://www.sec.gov/about/secrss.shtml">SEC RSS feeds</a>. <span className="font-bold">Or you can let the Secretary take of that for you.</span></blockquote>
     
@@ -42,9 +44,9 @@ const Index = () => {
       </div>
       
       <div className="1024px:w-1/3">
-        <h3 className="text-3xl text-navy">SEC Calendar</h3>
+        <h3 className="text-3xl text-navy">Upcoming Events</h3>
         <div className="mb-4 text-lg 1024px:mb-8">
-          {startDate === endDate ? startDate : (startDate + " - " + futureDate)}
+          {startDate === endDate ? startDate : (todayDate + " - " + futureDate)}
         </div>
         <UpcomingEvents start={start} end={future} />
       </div>
