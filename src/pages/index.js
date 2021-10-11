@@ -18,6 +18,8 @@ const Index = () => {
 
   var future = new Date(today);
   future.setDate(future.getDate() + MOD);
+  var futureDate = months[future.getMonth()] + " " + future.getDate() + ", " + future.getFullYear();
+
 
   return (
   <>
@@ -40,7 +42,10 @@ const Index = () => {
       </div>
       
       <div className="1024px:w-1/3">
-        <h3 className="text-3xl text-navy 1024px:mb-8">Upcoming Events</h3>
+        <h3 className="text-3xl text-navy">SEC Calendar</h3>
+        <div className="mb-4 text-lg 1024px:mb-8">
+          {startDate === endDate ? startDate : (startDate + " - " + futureDate)}
+        </div>
         <UpcomingEvents start={start} end={future} />
       </div>
       </div>

@@ -1,12 +1,11 @@
 import React from "react"
 
-const Feed = ({startDate, endDate, nodes, title, link}) => {
-
+const Feed = ({startDate, endDate, nodes, title, link, singleColumn}) => {
   const months = ["January", "February", "March", "April", "May", "June",
     "July", "August", "September", "October", "November", "December"
   ];
   let feed = [];
- 
+  let isSingleColumn = singleColumn ? singleColumn : false;
   nodes.forEach(function(entry, i) {
   let content = entry.content ? entry.content.replaceAll("<br />", " ") : "";
   content = entry.description ? entry.description : content;
@@ -54,7 +53,7 @@ return (
         <h2 className="text-2xl border-b border-black-25 pb-2">{title}</h2>
             
         <div className={(feed.length > 0 ? "" : "hidden")}>
-          <ul>
+          <ul className={(feed.length > 1 && !isSingleColumn ? " 1024px:grid 1024px:gap-8 1024px:grid-cols-2" : "")}>
             {feed}
           </ul>
         </div>
