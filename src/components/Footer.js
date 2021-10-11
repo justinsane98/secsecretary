@@ -4,8 +4,6 @@ import QR from "../images/$hearer.png"
 function Footer(props) {
   var archives = [];
   var archiveLinks = [
-    ["Yesterday", "/yesterday"],
-    ["This Week", "/week"],
     ["News", "/news"],
     ["Speeches", "/speeches"],
     ["Public Statements", "/statements"],
@@ -18,6 +16,8 @@ function Footer(props) {
     ["Investor Alerts", "/investorAlerts"],
     ["Investment Management", "/investmentManagement"],
     ["Federal Register", "/federalRegister"],
+    ["Meetings","/events"],
+    ["Appearances","/appearances"],
   ]
 
   archiveLinks.forEach(function(entry, i) {
@@ -38,7 +38,7 @@ function Footer(props) {
         </div>
         <div className="mt-12 pt-12 text-black text-sm border-t border-black-25 leading-loose">
           <h3 className="text-xl pb-2 text-black-50">Disclaimers</h3>
-          <p className="text-white-25">The Sec Secretary provides a free digest of the most recent materials posted by the SEC, updated fresh every 15 minutes Monday-Fridays EST excluding official holidays observed by the SEC. The official release date of a document may differ from the posting date so always verify the source documents. Some legacy sections do not have data feeds, the SEC has been notified and I hope they will provide a feed in the future or I will look into alternative methods of acquiring the information. Those sections include: <a className="text-white-50 hover:underline" href="https://www.sec.gov/rules/other.htm">Other Commission Orders, Notices, and Information</a>, <a className="text-white-50 hover:underline" href="https://www.sec.gov/about/upcoming-events.htm">Upcoming Events</a></p>
+          <p className="text-white-25">The Sec Secretary provides a free digest of the most recent materials posted by the SEC, updated fresh every 15 minutes Monday-Fridays EST excluding official holidays observed by the SEC. The official release date of a document may differ from the posting date so always verify the source documents. Some legacy sections do not have data feeds, the SEC has been notified and I hope they will provide a feed in the future or I will look into alternative methods of acquiring the information. Those sections include: <a className="text-white-50 hover:underline" href="https://www.sec.gov/rules/other.htm">Other Commission Orders, Notices, and Information</a></p>
           <div className="text-white-25">
             <p className="mb-12">Coming soon:&nbsp;<a className="text-white-50 hover:underline" href="https://www.sec.gov/cgi-bin/browse-edgar?action=getcurrent">Latest Filings</a>
             ,&nbsp;<a className="text-white-50 hover:underline" href="https://www.sec.gov/news/whatsnew/wn-archive.shtml">Previous What’s New Issues</a>
