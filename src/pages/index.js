@@ -9,19 +9,46 @@ const Index = () => {
   ];
   var MOD = 7;
   var today = new Date();
-  var todayDate = months[today.getMonth()] + " " + (today.getDate()) + ", " + today.getFullYear();
-  
+
   var start = new Date(today);
   start.setDate(start.getDate() - MOD);
-  var startDate = months[start.getMonth()] + " " + (start.getDate()) + ", " + start.getFullYear();
+  var startDate = months[start.getMonth()] + " " + start.getDate() + ", " + start.getFullYear();
   var end = new Date(today);
   end.setDate(end.getDate());
   var endDate = months[end.getMonth()] + " " + end.getDate() + ", " + end.getFullYear();
 
   var future = new Date(today);
   future.setDate(future.getDate() + MOD);
-  var futureDate = months[future.getMonth()] + " " + future.getDate() + ", " + future.getFullYear();
 
+  var upcomingDateString = "";
+  if(endDate === startDate){
+      upcomingDateString = startDate
+  } else {
+    if(start.getMonth() === future.getMonth() ){
+      upcomingDateString += months[start.getMonth()] + " " + start.getDate()
+      upcomingDateString += " - " 
+      upcomingDateString += future.getDate() + ", " + future.getFullYear()
+    } else {
+      upcomingDateString += months[start.getMonth()] + " " + start.getDate() + ", " + start.getFullYear() 
+      upcomingDateString += " - " 
+      upcomingDateString += months[future.getMonth()] + " " + future.getDate() + ", " + future.getFullYear()
+    }
+  }
+
+  var pastDateString = "";
+  if(startDate === endDate){
+      pastDateString = startDate
+  } else {
+    if(start.getMonth() === end.getMonth() ){
+      pastDateString += months[start.getMonth()] + " " + start.getDate()
+      pastDateString += " - " 
+      pastDateString += end.getDate() + ", " + end.getFullYear()
+    } else {
+      pastDateString += months[start.getMonth()] + " " + start.getDate() + ", " + start.getFullYear() 
+      pastDateString += " - " 
+      pastDateString += months[end.getMonth()] + " " + end.getDate() + ", " + end.getFullYear()
+    }
+  }
 
   return (
   <>
@@ -36,7 +63,7 @@ const Index = () => {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
             </svg>
           </a> */}
-          <span>{startDate === endDate ? startDate : (startDate + " - " + endDate)}</span>
+          <span>{pastDateString}</span>
         </h2>
         
           <Feeds start={start} end={today} />
@@ -45,7 +72,7 @@ const Index = () => {
       <div className="1024px:w-1/3 pt-8 1024px:pl-8 bg-gradient-to-r from-black-1 to-white">
         <h3 className="text-3xl text-navy -mb-2">Upcoming Events</h3>
         <div className="mb-4 text-lg 1024px:mb-8  text-navy opacity-50">
-          {startDate === endDate ? startDate : (todayDate + " - " + futureDate)}
+          {upcomingDateString}
         </div>
         <UpcomingEvents start={start} end={future} />
       </div>
