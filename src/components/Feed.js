@@ -39,8 +39,8 @@ const Feed = ({startDate, endDate, nodes, title, link, singleColumn}) => {
   if(entryDate.setHours(0,0,0,0) >= startDate.setHours(0,0,0,0) && entryDate.setHours(0,0,0,0) <= endDate.setHours(0,0,0,0)){ 
     feed.push (
       <li className="py-4" key={(entry.title || entry.name ) + i }>
-        <a className="text-large text-navy font-bold hover:underline" href={entry.link}>{entry.title ?? entry.name}</a>
-        <p className="opacity-90">{content}</p>
+        <a className="mb-1 block text-navy hover:underline" href={entry.link}>{entry.title ?? entry.name}</a>
+        <p className="text-sm leading-loose text-black-75 mb-1">{content}</p>
         <p className="text-sm opacity-50">{entryMonth} {entryDay} {entryHour}:{entryMinute} EST</p>
       </li>
     );
@@ -50,7 +50,7 @@ const Feed = ({startDate, endDate, nodes, title, link, singleColumn}) => {
 return (
   <>
       <section className={(feed.length > 0 ? "" : "hidden") + " mb-12 relative "}>
-        <h2 className="text-2xl border-b border-black-25 pb-2">{title}</h2>
+        <h2 className="text-2xl text-navy border-b border-black-10 pb-2">{title}</h2>
             
         <div className={(feed.length > 0 ? "" : "hidden")}>
           <ul className={(feed.length > 1 && !isSingleColumn ? " 1024px:grid 1024px:gap-8 1024px:grid-cols-2" : "")}>
@@ -58,8 +58,8 @@ return (
           </ul>
         </div>
 
-        <div className={(feed.length > 0 ? "" : "hidden") + " 425px:absolute top-2 right-0 text-navy"}>
-          <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 inline-block relative -top-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg> <a className="inline-block hover:underline" href={link}>More</a>
+        <div className={(feed.length > 0 ? "" : "hidden") + " 425px:absolute top-2 right-0 text-navy opacity-25 hover:opacity-50"}>
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 inline-block relative -top-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg> <a className="inline-block" href={link}>More</a>
         </div>     
       </section>    
 

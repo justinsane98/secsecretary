@@ -11,9 +11,9 @@ function Layout({props, children}) {
         href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Playfair+Display&display=swap"
         rel="stylesheet"
       />
-      <div className="font-serif">
+      <div className="font-serif pt-11">
         <Header/>
-        <div className="mt-12 mx-4 768px:mx-12 1200px:mx-auto 1200px:w-3/4 1400px:w-1/2">
+        <div className="mx-4 768px:mx-12 1200px:mx-auto 1200px:w-3/4 1400px:w-1/2">
           <main className="min-h-full pb-12 relative">
             {children}
           </main>

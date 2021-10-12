@@ -28,7 +28,7 @@ const nodes = data.allFeedStatements.nodes;
 return (
   <>
     <Layout>
-      <section className="mb-12 relative">
+      <section className="my-12 relative">
         <Feed title="Public Statements" startDate={start} endDate={end} nodes={nodes} link="/statements" />
         <div className="relative -top-10 -mt-8 425px:mt-0 425px:absolute 425px:top-2 425px:right-0 bg-white 425px:text-right 425px:w-1/2">
           <a className="text-gold leading-loose hover:underline" href="https://www.sec.gov/news/statements.rss">XML</a> | <a className="inline-block text-navy hover:underline" href="https://www.sec.gov/news/statements">Source</a>
