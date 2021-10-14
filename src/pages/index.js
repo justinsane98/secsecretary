@@ -1,5 +1,6 @@
 import React from "react"
 import Feeds from "../components/Feeds"
+import ManualFeeds from "../components/ManualFeeds"
 import Layout from "../components/Layout"
 import UpcomingEvents from "../components/UpcomingEvents"
 
@@ -25,7 +26,7 @@ const Index = () => {
       upcomingDateString = startDate
   } else {
     if(start.getMonth() === future.getMonth() ){
-      upcomingDateString += months[start.getMonth()] + " " + start.getDate()
+      upcomingDateString += months[today.getMonth()] + " " + today.getDate()
       upcomingDateString += " - " 
       upcomingDateString += future.getDate() + ", " + future.getFullYear()
     } else {
@@ -67,6 +68,7 @@ const Index = () => {
         </h2>
         
           <Feeds start={start} end={today} />
+          <ManualFeeds start={start} end={today} />
       </div>
       
       <div className="1024px:w-1/3 pt-8 1024px:pl-8 bg-gradient-to-r from-black-1 to-white">

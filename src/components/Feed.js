@@ -27,7 +27,7 @@ const Feed = ({startDate, endDate, nodes, title, link, singleColumn}) => {
     entryDay = entry.date.split(" ")[1].slice(0,-1)
     entryMonth = entry.date.split(" ")[0].slice(0,-1)
     entryYear = entry.date.split(" ")[2]
-    entryTime = entry.date.split(" ")[4]
+    entryTime = entry.date.split(" ")[4] ? entry.date.split(" ")[4] : "8:00"
     entrySuffix = entry.date.split(" ")[5]
     entryMinute = entryTime.split(":")[1]
     entryHour = entryTime.split(":")[0]
@@ -41,7 +41,7 @@ const Feed = ({startDate, endDate, nodes, title, link, singleColumn}) => {
       <li className="py-4" key={(entry.title || entry.name ) + i }>
         <a className="mb-1 block text-navy hover:underline" href={entry.link}>{entry.title ?? entry.name}</a>
         <p className="text-sm leading-loose text-black-75 mb-1">{content}</p>
-        <p className="text-sm opacity-50">{entryMonth} {entryDay} {entryHour}:{entryMinute} EST</p>
+        <p className="text-sm opacity-50">{entryMonth} {entryDay}, {entryYear} | {entryHour}:{entryMinute} EST</p>
       </li>
     );
   }
@@ -54,7 +54,7 @@ return (
             
         <div className={(feed.length > 0 ? "" : "hidden")}>
           <ul className={(feed.length > 1 && !isSingleColumn ? " 1024px:grid 1024px:gap-8 1024px:grid-cols-2" : "")}>
-            {feed}
+            {feed.sort(function(a,b){ return a.pubDate - b.pubDate})}
           </ul>
         </div>
 

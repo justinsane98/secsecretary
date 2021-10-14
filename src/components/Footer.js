@@ -18,6 +18,7 @@ function Footer(props) {
     ["Federal Register", "/federalRegister"],
     ["Meetings","/events"],
     ["Appearances","/appearances"],
+    ["Other Orders and Notices","/otherOrdersNotices"],
   ]
 
   archiveLinks.forEach(function(entry, i) {
@@ -39,12 +40,7 @@ function Footer(props) {
         <div className="mt-12 pt-12 text-black text-sm border-t border-black-25 leading-loose">
           <h3 className="text-xl pb-2 text-black-50">Disclaimers</h3>
           <p className="text-white-25">The official <a className="text-white-50 hover:underline" href="https://www.sec.gov/news/whatsnew/wn-today.shtml">What’s New page</a> for the SEC is no longer updated as of September 30, 2021. To stay current on the most recent materials posted to the SEC website, the SEC suggests subscribing to the <a className="text-white-50 hover:underline" href="https://www.sec.gov/about/secrss.shtml">SEC RSS feeds</a>. The Sec Secretary provides a free digest of the most recent materials posted by the SEC, updated fresh every 15 minutes Monday-Fridays EST excluding official holidays observed by the SEC. The official release date of a document may differ from the posting date so always verify the source documents. Some legacy sections do not have data feeds, the SEC has been notified and I hope they will provide a feed in the future.</p>
-          <div className="text-white-25">
-            <p className="mb-12">Coming soon:&nbsp;<a className="text-white-50 hover:underline" href="https://www.sec.gov/rules/other.htm">Other Commission Orders, Notices, and Information</a>
-            ,&nbsp;<a className="text-white-50 hover:underline" href="https://www.sec.gov/cgi-bin/browse-edgar?action=getcurrent">Latest Filings</a>
-            ,&nbsp;<a className="text-white-50 hover:underline" href="https://www.sec.gov/news/whatsnew/wn-archive.shtml">Previous What’s New Issues</a>
-            ,&nbsp;<a className="text-white-50 hover:underline" href="https://www.sec.gov/news/digest.shtml">News Digest Archives (1956-2013)</a>
-            </p>
+          <div className="text-white-25 mt-12">
             <div className="flex flex-wrap">
               <div className="w-full 768px:w-auto 768px:mr-4">
                 <a className="inline-block w-20 opacity-50 hover:opacity-100 border-2 border-white rounded" href="https://cash.app/$hearer"><img src={QR} alt="$hearer"/></a>
