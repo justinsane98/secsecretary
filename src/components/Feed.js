@@ -9,6 +9,7 @@ const Feed = ({startDate, endDate, nodes, title, link, singleColumn}) => {
   nodes.forEach(function(entry, i) {
   let content = entry.content ? entry.content.replaceAll("<br />", " ") : "";
   content = entry.description ? entry.description : content;
+  content = content.includes("(function($)") ? "" : content;
   let entryDay, entryMonth, entryYear, entryTime, entryMinute, entryHour, entryDate, entrySuffix;
 
   if(entry.pubDate){
@@ -54,7 +55,13 @@ return (
             
         <div className={(feed.length > 0 ? "" : "hidden")}>
           <ul className={(feed.length > 1 && !isSingleColumn ? " 1024px:grid 1024px:gap-8 1024px:grid-cols-2" : "")}>
-            {feed.sort(function(a,b){ return a.pubDate - b.pubDate})}
+            {feed.sort(function(a,b){ 
+              if (a.pubDate){
+                return a.pubDate - b.pubDate 
+              } else {
+                return a.date - b.date 
+              }
+            })}
           </ul>
         </div>
 

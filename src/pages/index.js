@@ -30,7 +30,7 @@ const Index = () => {
       upcomingDateString += " - " 
       upcomingDateString += future.getDate() + ", " + future.getFullYear()
     } else {
-      upcomingDateString += months[start.getMonth()] + " " + start.getDate() + ", " + start.getFullYear() 
+      upcomingDateString += months[start.getMonth()] + " " + today.getDate() + ", " + start.getFullYear() 
       upcomingDateString += " - " 
       upcomingDateString += months[future.getMonth()] + " " + future.getDate() + ", " + future.getFullYear()
     }
