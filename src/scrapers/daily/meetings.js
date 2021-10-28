@@ -15,22 +15,29 @@ const fs = require('fs');
         let elem = document.body.querySelectorAll('.upcoming-views-sec-meetings .views-row');
         let data = Object.values(elem).map(x => {
             return {
-                name: x.querySelector('.views-field-views-ifempty a').textContent.trim() ?? null,
-                link: x.querySelector('.views-field-views-ifempty a').href ?? null,
-                date: x.querySelector('.views-field-field-sec-event-date .datetime').textContent.trim() ?? null,
-                description: x.querySelector('.views-field-body a').textContent.trim() ?? null,
+                name: x.querySelector('.views-field-views-ifempty a').textContent.trim() ?? "",
+                link: x.querySelector('.views-field-views-ifempty a').href ?? "",
+                date: x.querySelector('.views-field-field-sec-event-date .datetime').textContent.trim() ?? "",
+                description: x.querySelector('.views-field-body a').textContent.trim() ?? "",
             }
         });
         return data;
     });
-    console.log("*********************************");
-    console.log("MEETINGS: " + data.length);
-    console.log("*********************************");
-    console.log(data);
-    let dataJson = JSON.stringify(data)
 
-    // FILENAME
-    fs.writeFileSync('src/data/meetings.json',dataJson);
-    await browser.close();
+    if (data.length > 0){
+        console.log(data);
+        console.log("*********************************");
+        console.log("MEETINGS: " + data.length);
+        console.log("*********************************");
+        
+        let dataJson = JSON.stringify(data)
 
+        // FILENAME
+        fs.writeFileSync('src/data/meetings.json', dataJson);
+        await browser.close();
+    } else {
+        console.log("*********************************");
+        console.log("NO MEETINGS");
+        console.log("*********************************");
+    }
 })();

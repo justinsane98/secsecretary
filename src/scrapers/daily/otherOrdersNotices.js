@@ -15,21 +15,28 @@ const fs = require('fs');
         let elem = document.body.querySelectorAll('#mainlist tbody tr:not(.tablesorter-ignoreRow)');
         let data = Object.values(elem).map(x => {
             return {
-                name: x.querySelector('td:nth-child(3) b').textContent.trim() ?? null,
-                link: x.querySelector('td:nth-child(1) a').href ?? null,
-                date: x.querySelector('td:nth-child(2)').textContent.trim() ?? null,
+                name: x.querySelector('td:nth-child(3) b').textContent.trim() ?? "",
+                link: x.querySelector('td:nth-child(1) a').href ?? "",
+                date: x.querySelector('td:nth-child(2)').textContent.trim() ?? "",
             }
         });
         return data;
     });
-    console.log("*********************************");
-    console.log("OTHER ORDERS AND NOTICES: " + data.length);
-    console.log("*********************************");
-    console.log(data);
-    let dataJson = JSON.stringify(data)
+    if (data.length > 0){
+        console.log(data);
+        console.log("*********************************");
+        console.log("OTHER ORDERS NOTICES: " + data.length);
+        console.log("*********************************");
+        
+        let dataJson = JSON.stringify(data)
 
-    // FILENAME
-    fs.writeFileSync('src/data/otherOrdersNotices.json',dataJson);
-    await browser.close();
+        // FILENAME
+        fs.writeFileSync('src/data/otherOrdersNotices.json', dataJson);
+        await browser.close();
+    } else {
+        console.log("*********************************");
+        console.log("NO ORDERS OR NOTICES");
+        console.log("*********************************");
+    }
 
 })();
