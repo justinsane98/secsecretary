@@ -7,8 +7,9 @@ const Feed = ({startDate, endDate, nodes, title, link, singleColumn}) => {
   let feed = [];
   let isSingleColumn = singleColumn ? singleColumn : false;
   nodes.forEach(function(entry, i) {
-  let content = entry.content ? entry.content.replaceAll("<br />", " ") : "";
+  let content = entry.content ? entry.content.replaceAll("<br />", " ").replaceAll("&#39;", "'").replaceAll("`", "'") : "";
   content = entry.description ? entry.description : content;
+  // remove wierd javascript injection from the feeds
   content = content.includes("(function($)") ? "" : content;
   let entryDay, entryMonth, entryYear, entryTime, entryMinute, entryHour, entryDate, entrySuffix;
 
