@@ -95,7 +95,7 @@ const Index = () => {
       
       <div className="1024px:w-1/3 pt-8 1024px:pl-8 bg-gradient-to-r from-black-1 to-white">
         <h3 className="text-3xl text-navy -mb-2">Upcoming Events</h3>
-        <div className="mb-4 text-lg 1024px:mb-8  text-navy opacity-50">
+        <div className="mb-4 1024px:mb-8 text-navy opacity-50">
           {upcomingDateString}
         </div>
 
