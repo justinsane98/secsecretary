@@ -51,6 +51,36 @@ const Index = () => {
     }
   }
 
+  var archives = [];
+  var archiveLinks = [
+    ["News", "/news"],
+    ["Speeches", "/speeches"],
+    ["Public Statements", "/statements"],
+    ["Testimony", "/testimony"],
+    ["Litigation", "/litigation"],
+    ["Administrative Proceedings", "/admin"],
+    ["Trading Suspensions", "/tradingSuspensions"],
+    ["Proposed Rules", "/proposedRules"],
+    ["Corporate Finance", "/coporateFinance"],
+    ["Investor Alerts", "/investorAlerts"],
+    ["Investment Management", "/investmentManagement"],
+    ["Federal Register", "/federalRegister"],
+    ["Meetings","/events"],
+    ["Appearances","/appearances"],
+    ["Other Orders and Notices","/otherOrdersNotices"],
+  ]
+
+  archiveLinks.forEach(function(entry, i) {
+    archives.push (
+      <li key={("archives-" + entry[1] + i)} className="w-full mb-2">
+        <a className="hover:underline" href={entry[1]}>
+          {entry[0]}
+          <svg xmlns="http://www.w3.org/2000/svg" class="inline ml-1 h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+        </a>
+      </li>
+    );
+  });
+
   return (
   <>
     <Layout>
@@ -58,15 +88,7 @@ const Index = () => {
       <div className="1024px:flex 1024px:space-x-12">
       <div className="relative 1024px:w-2/3 pt-8">
         <h1 className="text-3xl text-navy -mb-2">What's New at the SEC</h1>
-        <h2 className="mb-8 text-lg text-navy opacity-50">
-          {/* <a className="text-navy-50 inline-block relative top-1 left-0" href="/yesterday">
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-            </svg>
-          </a> */}
-          <span>{pastDateString}</span>
-        </h2>
-        
+        <h2 className="mb-8 text-navy opacity-50"><span>{pastDateString}</span></h2>
           <Feeds start={start} end={today} />
           <ManualFeeds start={start} end={today} />
       </div>
@@ -76,7 +98,17 @@ const Index = () => {
         <div className="mb-4 text-lg 1024px:mb-8  text-navy opacity-50">
           {upcomingDateString}
         </div>
+
         <UpcomingEvents start={start} end={future} />
+
+        <div className="hidden 1024px:block mt-12 pt-12">
+          <h3 className="text-xl leading-tight text-black-50">Don't see what you are looking for?</h3>
+          <h3 className="text-3xl mt-2 mb-6 leading-none opacity-75">Dive into the Archives</h3>
+        
+          <ul className="flex flex-wrap opacity-50">
+            {archives}
+          </ul>
+        </div>
       </div>
       </div>
      

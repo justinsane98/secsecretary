@@ -23,13 +23,18 @@ function Footer(props) {
 
   archiveLinks.forEach(function(entry, i) {
     archives.push (
-      <li key={("footer-" + entry[1] + i)} className="w-full 425px:w-1/2 1200px:w-1/3 mb-2"><a className="hover:underline" href={entry[1]}>{entry[0]}</a></li>
+      <li key={("footer-" + entry[1] + i)} className="w-full 425px:w-1/2 1200px:w-1/3 mb-2">
+        <a className="hover:underline" href={entry[1]}>
+          {entry[0]}
+          <svg xmlns="http://www.w3.org/2000/svg" class="inline ml-1 h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+        </a>
+      </li>
     );
   });
   return (
     <footer className="mt-12 bg-navy">
       <div className="py-12 mx-4 768px:mx-12 1200px:mx-auto 1200px:w-3/4 1400px:w-1/2">
-        <div className="text-white">
+        <div className="1024px:hidden text-white">
           <h3 className="text-xl text-black-50">Don't see what you are looking for?</h3>
           <h3 className="text-3xl mb-6 opacity-75">Dive into the Archives</h3>
         
@@ -37,7 +42,7 @@ function Footer(props) {
             {archives}
           </ul>
         </div>
-        <div className="mt-12 pt-12 text-black text-sm border-t border-black-25 leading-loose">
+        <div className="mt-12 pt-12 text-black text-sm 1024px:pt-0 1024px:border-0 border-t border-black-25 leading-loose">
           <h3 className="text-xl pb-2 text-black-50">Disclaimers</h3>
           <p className="text-white-25">The official <a className="text-white-50 hover:underline" href="https://www.sec.gov/news/whatsnew/wn-today.shtml">What’s New page</a> for the SEC is no longer updated as of September 30, 2021. To stay current on the most recent materials posted to the SEC website, the SEC suggests subscribing to the <a className="text-white-50 hover:underline" href="https://www.sec.gov/about/secrss.shtml">SEC RSS feeds</a>. The Sec Secretary provides a free digest of the most recent materials posted by the SEC, updated fresh every 15 minutes Monday-Fridays EST excluding official holidays observed by the SEC. The official release date of a document may differ from the posting date so always verify the source documents. Some legacy sections do not have data feeds, the SEC has been notified and I hope they will provide a feed in the future.</p>
           <div className="text-white-25 mt-12">

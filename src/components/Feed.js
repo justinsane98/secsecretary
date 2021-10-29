@@ -6,6 +6,16 @@ const Feed = ({startDate, endDate, nodes, title, link, singleColumn}) => {
   ];
   let feed = [];
   let isSingleColumn = singleColumn ? singleColumn : false;
+
+  nodes.sort(function(a,b){
+    if(a.pubDate) {
+      return new Date(b.pubDate) - new Date(a.pubDate);
+    }
+    if (a.date) {
+      return new Date(b.pubDate) - new Date(a.pubDate);
+    }
+  });
+
   nodes.forEach(function(entry, i) {
   let content = entry.content ? entry.content.replaceAll("<br />", " ").replaceAll("&#39;", "'").replaceAll("`", "'") : "";
   content = entry.description ? entry.description : content;
@@ -40,9 +50,9 @@ const Feed = ({startDate, endDate, nodes, title, link, singleColumn}) => {
 
   if(entryDate.setHours(0,0,0,0) >= startDate.setHours(0,0,0,0) && entryDate.setHours(0,0,0,0) <= endDate.setHours(0,0,0,0)){ 
     feed.push (
-      <li className="py-4" key={(entry.title || entry.name ) + i }>
-        <a className="mb-1 block text-navy hover:underline" href={entry.link}>{entry.title ?? entry.name}</a>
-        <p className="text-sm leading-loose text-black-75 mb-1">{content}</p>
+      <li className={(isSingleColumn ? "" : " 1024px:mt-0") + " mb-8 "} key={(entry.title || entry.name ) + i }>
+        <a className="mb-1 block leading-tight text-navy hover:underline" href={entry.link}>{entry.title ?? entry.name}</a>
+        <p className="text-sm leading-relaxed text-black-75 mb-1">{content}</p>
         <p className="text-sm opacity-50">{entryMonth} {entryDay}, {entryYear} | {entryHour}:{entryMinute} EST</p>
       </li>
     );
@@ -55,14 +65,8 @@ return (
         <h2 className="text-2xl text-navy border-b border-black-10 pb-2">{title}</h2>
             
         <div className={(feed.length > 0 ? "" : "hidden")}>
-          <ul className={(feed.length > 1 && !isSingleColumn ? " 1024px:grid 1024px:gap-8 1024px:grid-cols-2" : "")}>
-            {feed.sort(function(a,b){ 
-              if (a.pubDate){
-                return a.pubDate - b.pubDate 
-              } else {
-                return a.date - b.date 
-              }
-            })}
+          <ul className={"pt-4 " + (feed.length > 1 && !isSingleColumn ? " 1024px:grid 1024px:gap-8 1024px:grid-cols-2" : "")}>
+            {feed}
           </ul>
         </div>
 
